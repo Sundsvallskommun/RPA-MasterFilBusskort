@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1708,1001</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1708,1826</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GUI_data_to_XML_dictionary_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -69,16 +69,15 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GUI_data_to_XML_dictionary" sap:VirtualizedContainerService.HintSize="538,600" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GUI_data_to_XML_dictionary" sap:VirtualizedContainerService.HintSize="850,1761" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="GUI data to XML dictionary" sap:VirtualizedContainerService.HintSize="496,512" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="GUI data to XML dictionary" sap:VirtualizedContainerService.HintSize="808,1673" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="TEMP" />
       </Sequence.Variables>
@@ -87,8 +86,8 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Write GUI data to XML data dictionary where information is missing. XML information is primarily.&quot;]" />
-      <Assign DisplayName="Assign - Temp Dictionary" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="746,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Write GUI data to XML data dictionary where information is missing. XML information is primarily.&quot;]" />
+      <Assign DisplayName="Assign - Temp Dictionary" sap:VirtualizedContainerService.HintSize="746,82" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[TEMP]</OutArgument>
         </Assign.To>
@@ -96,7 +95,7 @@
           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[in_CaseInformation.Copy()]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[in_CaseInformation.Keys]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="746,1186" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[in_CaseInformation.Keys]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
@@ -108,7 +107,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[in_CaseInformation(currentItem).Equals(in_NoDataFound)]" DisplayName="If - Value in dictionary is empty" sap:VirtualizedContainerService.HintSize="668,972" sap2010:WorkflowViewState.IdRef="If_2">
+              <If Condition="[in_CaseInformation(currentItem).Trim.Equals(in_NoDataFound)]" DisplayName="If - Value in dictionary is empty" sap:VirtualizedContainerService.HintSize="668,972" sap2010:WorkflowViewState.IdRef="If_2">
                 <If.Then>
                   <Sequence sap:VirtualizedContainerService.HintSize="632,783" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
@@ -188,12 +187,12 @@
         </ui:ForEach.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <Assign DisplayName="Assign - Overwrite Dictionary with TEMP" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign DisplayName="Assign - Overwrite Dictionary with TEMP" sap:VirtualizedContainerService.HintSize="746,82" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[in_CaseInformation]</OutArgument>
         </Assign.To>

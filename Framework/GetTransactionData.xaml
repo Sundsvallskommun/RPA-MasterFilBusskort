@@ -111,6 +111,7 @@
         <Variable x:TypeArguments="x:Boolean" Name="FileExsists" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_MasterUnfiltred" />
         <Variable x:TypeArguments="x:String" Name="OrchestratorQueue" />
+        <Variable x:TypeArguments="x:Boolean" Name="TestElseProd" />
       </Flowchart.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -126,7 +127,7 @@
       <Flowchart.StartNode>
         <x:Reference>__ReferenceID11</x:Reference>
       </Flowchart.StartNode>
-      <FlowStep x:Name="__ReferenceID1">
+      <FlowStep x:Name="__ReferenceID0">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,204</av:Point>
@@ -753,7 +754,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">410,750 390,750 390,816.5 510,816.5 510,846.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Check if case has been processed (check queue)" sap:VirtualizedContainerService.HintSize="700,1585" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                <Sequence DisplayName="Check if case has been processed (check queue)" sap:VirtualizedContainerService.HintSize="700,1863" sap2010:WorkflowViewState.IdRef="Sequence_36">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="CasesThatHasBeenProcessed" />
                                     <Variable x:TypeArguments="sd:DataTable" Name="TEMP" />
@@ -763,7 +764,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Check if case has already been processed and succeeded by looking for the same case ID in queue.&quot;]" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Check if case has already been processed (succees or fail) by looking for the same case ID in queue.&quot;]" />
                                   <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" sap:VirtualizedContainerService.HintSize="638,80" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="Failed, Successful" QueueName="[OrchestratorQueue]" Result="[CasesThatHasBeenProcessed]" />
                                   <Assign sap:VirtualizedContainerService.HintSize="638,82" sap2010:WorkflowViewState.IdRef="Assign_21">
                                     <Assign.To>
@@ -856,14 +857,40 @@
                                       </ActivityAction>
                                     </ui:ForEach.Body>
                                   </ui:ForEach>
-                                  <Assign sap:VirtualizedContainerService.HintSize="638,81" sap2010:WorkflowViewState.IdRef="Assign_22">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="sd:DataTable">[dt_Cases]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="sd:DataTable">[TEMP]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[Not TestElseProd]" DisplayName="If - Test ignore if the case has been processed" sap:VirtualizedContainerService.HintSize="638,359" sap2010:WorkflowViewState.IdRef="If_9">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="sd:DataTable">[dt_Cases]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="sd:DataTable">[TEMP]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                                 <FlowStep.Next>
                                   <FlowDecision x:Name="__ReferenceID10" Condition="[dt_Cases IsNot Nothing AndAlso dt_Cases.RowCount &gt; 0]" DisplayName="Any cases left?" sap:VirtualizedContainerService.HintSize="83,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
@@ -937,40 +964,40 @@
                                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Added &quot; + dt_Cases.RowCount.ToString + &quot; cases to queue.&quot;]" />
                                         </Sequence>
                                         <FlowStep.Next>
-                                          <x:Reference>__ReferenceID1</x:Reference>
+                                          <x:Reference>__ReferenceID0</x:Reference>
                                         </FlowStep.Next>
                                       </FlowStep>
                                     </FlowDecision.True>
                                     <FlowDecision.False>
-                                      <x:Reference>__ReferenceID0</x:Reference>
+                                      <FlowStep x:Name="__ReferenceID1">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">602.283333333334,458.56</av:Point>
+                                            <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="Log Message - No Cases found" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;No cases found or no cases left after filtering.&quot;]">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:LogMessage>
+                                      </FlowStep>
                                     </FlowDecision.False>
                                   </FlowDecision>
                                 </FlowStep.Next>
                               </FlowStep>
                             </FlowDecision.True>
                             <FlowDecision.False>
-                              <x:Reference>__ReferenceID0</x:Reference>
+                              <x:Reference>__ReferenceID1</x:Reference>
                             </FlowDecision.False>
                           </FlowDecision>
                         </FlowStep.Next>
                       </FlowStep>
                     </FlowDecision.True>
                     <FlowDecision.False>
-                      <FlowStep x:Name="__ReferenceID0">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">602.283333333334,458.56</av:Point>
-                            <av:Size x:Key="ShapeSize">200,52</av:Size>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message - No Cases found" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;No cases found or no cases left after filtering.&quot;]">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </ui:LogMessage>
-                      </FlowStep>
+                      <x:Reference>__ReferenceID1</x:Reference>
                     </FlowDecision.False>
                   </FlowDecision>
                 </FlowStep.Next>
@@ -1032,6 +1059,14 @@
                   <InArgument x:TypeArguments="x:String">[in_Config("OrchestratorQueueName").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[TestElseProd]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="x:Boolean">[if(in_Config("Environment").ToString.ToLower.Equals("test"), True, False)]</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
             </scg:List>
           </ui:MultipleAssign.AssignOperations>
           <sap:WorkflowViewStateService.ViewState>
@@ -1041,11 +1076,11 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:MultipleAssign>
         <FlowStep.Next>
-          <x:Reference>__ReferenceID1</x:Reference>
+          <x:Reference>__ReferenceID0</x:Reference>
         </FlowStep.Next>
       </FlowStep>
       <x:Reference>__ReferenceID4</x:Reference>
-      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
       <x:Reference>__ReferenceID5</x:Reference>
       <x:Reference>__ReferenceID6</x:Reference>
       <x:Reference>__ReferenceID7</x:Reference>

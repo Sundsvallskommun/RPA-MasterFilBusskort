@@ -92,7 +92,7 @@
         "testCaseId": "1427490e-7fc9-4953-b915-e53a8c7005f8",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
-        "fileName": "Tests\\TestCase Translate from GUI Keys to Masterfile...xaml"
+        "fileName": "Tests\\TestCase Get case content from GUI and Translate from GUI Keys to Masterfile...xaml"
       }
     ],
     "modernBehavior": true

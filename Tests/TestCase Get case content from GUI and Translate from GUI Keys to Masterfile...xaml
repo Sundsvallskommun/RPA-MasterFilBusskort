@@ -68,7 +68,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="TestCase_Translate_from_GUI_Keys_to_Masterfile__" sap:VirtualizedContainerService.HintSize="554,1764" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -100,7 +99,7 @@
           <OutArgument x:TypeArguments="x:String">[caseID]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">3547</InArgument>
+          <InArgument x:TypeArguments="x:String">4210</InArgument>
         </Assign.Value>
       </Assign>
     </Sequence>
@@ -116,26 +115,16 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Data from GUI.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Data Manipulation\Get Data from GUI.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_CaseID">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="caseID" />
-          </InArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_CaseID">[caseID]</InArgument>
           <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ErrorGettingCaseInfo" />
-          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_GUICaseDictionary">
-            <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="GUICaseDictionary" />
-          </OutArgument>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_GUICaseDictionary">[GUICaseDictionary]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Translate from GUI Keys to Masterfile Keys.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data Manipulation\Translate from GUI Keys to Masterfile Keys.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-          </InArgument>
-          <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="io_GUICaseDictionary">
-            <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="GUICaseDictionary" />
-          </InOutArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+          <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="io_GUICaseDictionary">[GUICaseDictionary]</InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -148,15 +137,11 @@
       </Assign>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Data Manipulation\GUI data to XML dictionary.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Data Manipulation\GUI data to XML dictionary.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_CaseInformation">
-            <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="EmptyDictionary" />
-          </InOutArgument>
+          <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_CaseInformation">[EmptyDictionary]</InOutArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_NoDataFound">
             <Literal x:TypeArguments="x:String" Value="" />
           </InArgument>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_GUICaseDictionary">
-            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="GUICaseDictionary" />
-          </InArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_GUICaseDictionary">[GUICaseDictionary]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;tst&quot;]" />
@@ -211,15 +196,9 @@
       </Assign>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Data Manipulation\Write to excel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Write to excel.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MasterFile">
-            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_MasterFile" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_MasterFile">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="MasterFile" />
-          </InArgument>
-          <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_CaseInformation">
-            <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="EmptyDictionary" />
-          </InOutArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MasterFile">[dt_MasterFile]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_MasterFile">[MasterFile]</InArgument>
+          <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_CaseInformation">[EmptyDictionary]</InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
