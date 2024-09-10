@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1708,4187</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1771,2270</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Translate_from_GUI_Keys_to_Masterfile_Keys_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -45,6 +45,7 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>Microsoft.Activities.Extensions.Statements</x:String>
       <x:String>System.Globalization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -86,7 +87,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Translate_from_GUI_Keys_to_Masterfile_Keys" sap:VirtualizedContainerService.HintSize="1179,4002" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Translate_from_GUI_Keys_to_Masterfile_Keys" sap:VirtualizedContainerService.HintSize="616,2205" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="RelevantIndex" />
     </Sequence.Variables>
@@ -95,7 +96,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Translate to dictionary keys" sap:VirtualizedContainerService.HintSize="1137,3914" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Translate to dictionary keys" sap:VirtualizedContainerService.HintSize="574,2117" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="MappingTable" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_MappingTable" />
@@ -109,8 +110,8 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1075,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Translating the keys from GUI dictionary to columnames from masterfile&quot;]" />
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1075,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Translating the keys from GUI dictionary to columnames from masterfile&quot;]" />
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="512,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -130,15 +131,21 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <If Condition="[io_GUICaseDictionary.Keys.Contains(&quot;Jag ansöker om busskort för elevresa för&quot;)]" DisplayName="If - Regular application with an valid peronID nr" sap:VirtualizedContainerService.HintSize="1075,607" sap2010:WorkflowViewState.IdRef="If_9">
+      <If Condition="[io_GUICaseDictionary.Keys.Contains(&quot;Jag ansöker om busskort för elevresa för&quot;)]" DisplayName="If - Regular application with an valid peronID nr" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="If_9">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_42">
+          <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_42">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_33">
+            <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_33">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[SearchForWho]</OutArgument>
               </Assign.To>
@@ -149,21 +156,21 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap:VirtualizedContainerService.HintSize="554,447" sap2010:WorkflowViewState.IdRef="Sequence_45">
+          <Sequence sap:VirtualizedContainerService.HintSize="554,445" sap2010:WorkflowViewState.IdRef="Sequence_45">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[io_GUICaseDictionary.Keys.Contains(&quot;Personnummer eller tf-nummer?&quot;)]" DisplayName="If - Temporary PersonID" sap:VirtualizedContainerService.HintSize="512,359" sap2010:WorkflowViewState.IdRef="If_8">
+            <If Condition="[io_GUICaseDictionary.Keys.Contains(&quot;Personnummer eller tf-nummer?&quot;)]" DisplayName="If - Temporary PersonID" sap:VirtualizedContainerService.HintSize="512,357" sap2010:WorkflowViewState.IdRef="If_8">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_43">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_34">
+                  <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_34">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[SearchForWho]</OutArgument>
                     </Assign.To>
@@ -186,7 +193,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_MappingTable]" DisplayName="Read Range Workbook - New Keys depending on who is applying" sap:VirtualizedContainerService.HintSize="1075,25" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="MappningNyaKeys" WorkbookPath="[MappingTable]">
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_MappingTable]" DisplayName="Read Range Workbook - New Keys depending on who is applying" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="MappningNyaKeys" WorkbookPath="[MappingTable]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -194,8 +201,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ReadRange>
-      <ui:Comment sap:VirtualizedContainerService.HintSize="1075,228" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// I styrfilen för roboten är första kolumnen en &quot;styrkomulm&quot; som gör att rätt keys från GUI:et mappas till rätt kolumner i masterfilen (kolumnernamnen ska vara likamed keyes). &#xD;&#xA;&#xD;&#xA;Genom att kolla på vem som är ansökan är sökt för, och om det finns ett tf persnr så mappas key:sen från dictionaryn till rätt kolumnnamn. Detta för att Keysen från gui dictionaryn ska få rätt namn." />
-      <Sequence DisplayName="Get index of row Applied For Who" sap:VirtualizedContainerService.HintSize="1075,201" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <ui:Comment sap:VirtualizedContainerService.HintSize="512,228" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// I styrfilen för roboten är första kolumnen en &quot;styrkomulm&quot; som gör att rätt keys från GUI:et mappas till rätt kolumner i masterfilen (kolumnernamnen ska vara likamed keyes). &#xA;&#xA;Genom att kolla på vem som är ansökan är sökt för, och om det finns ett tf persnr så mappas key:sen från dictionaryn till rätt kolumnnamn. Detta för att Keysen från gui dictionaryn ska få rätt namn." />
+      <Sequence DisplayName="Get index of row Applied For Who" sap:VirtualizedContainerService.HintSize="512,201" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dt_FilterAppliedFor" />
           <Variable x:TypeArguments="x:Int32" Name="I" />
@@ -230,27 +237,27 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="351,113" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="554,510" sap2010:WorkflowViewState.IdRef="Sequence_22">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[CurrentRow(0).ToString.ToLower.Trim.Equals(SearchForWho.ToLower.Trim)]" DisplayName="If - What row index is relevant for this case" sap:VirtualizedContainerService.HintSize="309,25" sap2010:WorkflowViewState.IdRef="If_3">
+                <If Condition="[CurrentRow(0).ToString.ToLower.Trim.Equals(SearchForWho.ToLower.Trim)]" DisplayName="If - What row index is relevant for this case" sap:VirtualizedContainerService.HintSize="512,422" sap2010:WorkflowViewState.IdRef="If_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="476,235" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                    <Sequence sap:VirtualizedContainerService.HintSize="476,234" sap2010:WorkflowViewState.IdRef="Sequence_20">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign - RelevantIndex" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_14">
+                      <Assign DisplayName="Assign - RelevantIndex" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_14">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[RelevantIndex]</OutArgument>
                         </Assign.To>
@@ -282,10 +289,10 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
       </Sequence>
-      <If Condition="[io_GUICaseDictionary.Keys.Contains(&quot;Beslutet gäller för perioden&quot;)]" DisplayName="If - Have to split date " sap:VirtualizedContainerService.HintSize="1075,477" sap2010:WorkflowViewState.IdRef="If_7">
+      <If Condition="[io_GUICaseDictionary.Keys.Contains(&quot;Beslutet gäller för perioden&quot;)]" DisplayName="If - Have to split date " sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="If_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -311,7 +318,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign - DateFrom" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_25">
+              <Assign DisplayName="Assign - DateFrom" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_25">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[DateFrom]</OutArgument>
                 </Assign.To>
@@ -319,7 +326,7 @@
                   <InArgument x:TypeArguments="x:String">[Split(io_GUICaseDictionary("Beslutet gäller för perioden").ToString, " ")(0)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Assign - DateFrom" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_28">
+              <Assign DisplayName="Assign - DateFrom" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_28">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[KeyDateFrom]</OutArgument>
                 </Assign.To>
@@ -327,7 +334,7 @@
                   <InArgument x:TypeArguments="x:String">Beslutsdatum Från</InArgument>
                 </Assign.Value>
               </Assign>
-              <InvokeMethod DisplayName="Invoke Method - New entry DateFrom" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_8" MethodName="Add">
+              <InvokeMethod DisplayName="Invoke Method - New entry DateFrom" sap:VirtualizedContainerService.HintSize="434,135" sap2010:WorkflowViewState.IdRef="InvokeMethod_8" MethodName="Add">
                 <InvokeMethod.TargetObject>
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
                 </InvokeMethod.TargetObject>
@@ -378,15 +385,15 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[SearchForWho.Contains(&quot;Mitt barn&quot;)]" DisplayName="If - Search for 'Mitt barn'" sap:VirtualizedContainerService.HintSize="1075,719" sap2010:WorkflowViewState.IdRef="If_5">
+      <If Condition="[SearchForWho.ToLower.Contains(&quot;mitt barn&quot;)]" DisplayName="If - Search for 'Mitt barn'" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="If_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="492,530" sap2010:WorkflowViewState.IdRef="Sequence_26">
+          <Sequence sap:VirtualizedContainerService.HintSize="492,529" sap2010:WorkflowViewState.IdRef="Sequence_26">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="InfoAboutStudent" />
               <Variable x:TypeArguments="x:String" Name="Name" />
@@ -398,7 +405,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_17">
+            <Assign sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Assign_17">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[InfoAboutStudent]</OutArgument>
               </Assign.To>
@@ -409,6 +416,8 @@
             <Sequence DisplayName="Name of Student" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="Sequence_35">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="KeyName" />
+                <Variable x:TypeArguments="x:String" Name="FirstName" />
+                <Variable x:TypeArguments="x:String" Name="LastName" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -416,7 +425,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign - Name" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_18">
+              <Assign DisplayName="Assign - Name" sap:VirtualizedContainerService.HintSize="472,82" sap2010:WorkflowViewState.IdRef="Assign_18">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
                 </Assign.To>
@@ -424,20 +433,105 @@
                   <InArgument x:TypeArguments="x:String">[Split(InfoAboutStudent, "Personnummer")(0).ToString.Trim]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Assign - Name" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_29">
+              <TryCatch DisplayName="Try Catch - Firstname" sap:VirtualizedContainerService.HintSize="472,310" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                <TryCatch.Try>
+                  <Assign DisplayName="Assign - Firstname" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_47">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[FirstName]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Split(Name, "(\S+)(?:\s+\S+)*\s+(\S+)$").Where(Function(s) Not String.IsNullOrWhiteSpace(s)).ToArray()(0)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Assign DisplayName="Assign - Firstname" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_48">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[FirstName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Split(Name, " ")(0)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <Assign DisplayName="Assign - Firstname" sap:VirtualizedContainerService.HintSize="472,82" sap2010:WorkflowViewState.IdRef="Assign_29">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[KeyName]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">För- och efternamn (Elev)</InArgument>
+                  <InArgument x:TypeArguments="x:String">Förnamn (elev)</InArgument>
                 </Assign.Value>
               </Assign>
-              <InvokeMethod DisplayName="Invoke Method - New entry Name" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Add">
+              <InvokeMethod DisplayName="Invoke Method - New entry Name" sap:VirtualizedContainerService.HintSize="472,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Add">
                 <InvokeMethod.TargetObject>
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
                 </InvokeMethod.TargetObject>
                 <InArgument x:TypeArguments="x:String">[KeyName]</InArgument>
-                <InArgument x:TypeArguments="x:String">[Name]</InArgument>
+                <InArgument x:TypeArguments="x:String">[FirstName]</InArgument>
+              </InvokeMethod>
+              <TryCatch DisplayName="Try Catch - Lastname" sap:VirtualizedContainerService.HintSize="472,310" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                <TryCatch.Try>
+                  <Assign DisplayName="Assign - Firstname" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_49">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[LastName]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Split(Name, "(\S+)(?:\s+\S+)*\s+(\S+)$").Where(Function(s) Not String.IsNullOrWhiteSpace(s)).ToArray()(1)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Assign DisplayName="Assign - Firstname" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_50">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[LastName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Split(Name, " ")(1)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <Assign DisplayName="Assign - Lastname" sap:VirtualizedContainerService.HintSize="472,82" sap2010:WorkflowViewState.IdRef="Assign_51">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[KeyName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Efternamn (elev)</InArgument>
+                </Assign.Value>
+              </Assign>
+              <InvokeMethod DisplayName="Invoke Method - New entry Name" sap:VirtualizedContainerService.HintSize="472,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_14" MethodName="Add">
+                <InvokeMethod.TargetObject>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
+                </InvokeMethod.TargetObject>
+                <InArgument x:TypeArguments="x:String">[KeyName]</InArgument>
+                <InArgument x:TypeArguments="x:String">[LastName]</InArgument>
               </InvokeMethod>
             </Sequence>
             <Sequence DisplayName="SSN of Student" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="Sequence_36">
@@ -505,7 +599,7 @@
                   <OutArgument x:TypeArguments="x:String">[KeyAdress]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">Primär Adress</InArgument>
+                  <InArgument x:TypeArguments="x:String">Primär Gatuadress</InArgument>
                 </Assign.Value>
               </Assign>
               <InvokeMethod DisplayName="Invoke Method - New entry ID" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" MethodName="Add">
@@ -528,15 +622,15 @@
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[SearchForWho.Contains(&quot;tf-nummer&quot;)]" DisplayName="If - Search for 'Mitt barn'" sap:VirtualizedContainerService.HintSize="1075,768" sap2010:WorkflowViewState.IdRef="If_10">
+      <If Condition="[SearchForWho.ToLower.Contains(&quot;tf-nummer&quot;)]" DisplayName="If - Search for tf-nummer" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="If_10">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="538,579" sap2010:WorkflowViewState.IdRef="Sequence_38">
+          <Sequence sap:VirtualizedContainerService.HintSize="492,168" sap2010:WorkflowViewState.IdRef="Sequence_38">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="InfoAboutStudent" />
               <Variable x:TypeArguments="x:String" Name="Name" />
@@ -548,13 +642,13 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Name of Student" sap:VirtualizedContainerService.HintSize="496,491" sap2010:WorkflowViewState.IdRef="Sequence_39">
+            <Sequence DisplayName="Name of Student" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="Sequence_39">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="KeyName" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -563,7 +657,7 @@
                   <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[io_GUICaseDictionary("Förnamn *").Trim + " " + io_GUICaseDictionary("Efternamn *").Trim]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[io_GUICaseDictionary("Förnamn *").Trim]</InArgument>
                 </Assign.Value>
               </Assign>
               <Assign DisplayName="Assign - Name" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_37">
@@ -571,10 +665,33 @@
                   <OutArgument x:TypeArguments="x:String">[KeyName]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">För- och efternamn (Elev)</InArgument>
+                  <InArgument x:TypeArguments="x:String">Förnamn (Elev)</InArgument>
                 </Assign.Value>
               </Assign>
               <InvokeMethod DisplayName="Invoke Method - New entry Name" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_10" MethodName="Add">
+                <InvokeMethod.TargetObject>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
+                </InvokeMethod.TargetObject>
+                <InArgument x:TypeArguments="x:String">[KeyName]</InArgument>
+                <InArgument x:TypeArguments="x:String">[Name]</InArgument>
+              </InvokeMethod>
+              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_38">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[io_GUICaseDictionary("Efternamn *").Trim]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - Name" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_39">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[KeyName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Efternamn (Elev)</InArgument>
+                </Assign.Value>
+              </Assign>
+              <InvokeMethod DisplayName="Invoke Method - New entry Name" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_11" MethodName="Add">
                 <InvokeMethod.TargetObject>
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
                 </InvokeMethod.TargetObject>
@@ -594,7 +711,288 @@
           </Sequence>
         </If.Else>
       </If>
-      <Sequence DisplayName="New Keys to Dictionary" sap:VirtualizedContainerService.HintSize="1075,80" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <If Condition="[SearchForWho.ToLower.Contains(&quot;mig själv&quot;)]" DisplayName="If - Search for 'Mig själv'" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="If_11">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="492,288" sap2010:WorkflowViewState.IdRef="Sequence_48">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Name of Student" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="Sequence_47">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="KeyName" />
+                <Variable x:TypeArguments="x:String" Name="Name" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch DisplayName="Try Catch - Firstname" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <Assign DisplayName="Assign - Firstname" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_40">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Split(io_GUICaseDictionary("För- och efternamn").ToString.Trim, "(\S+)(?:\s+\S+)*\s+(\S+)$").Where(Function(s) Not String.IsNullOrWhiteSpace(s)).ToArray()(0)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Assign DisplayName="Assign - Firstname" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_44">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Split(io_GUICaseDictionary("För- och efternamn").ToString, " ")(0)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <Assign DisplayName="Assign - Name" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_41">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[KeyName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Förnamn (Elev)</InArgument>
+                </Assign.Value>
+              </Assign>
+              <InvokeMethod DisplayName="Invoke Method - New entry Name" sap:VirtualizedContainerService.HintSize="434,135" sap2010:WorkflowViewState.IdRef="InvokeMethod_12" MethodName="Add">
+                <InvokeMethod.TargetObject>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
+                </InvokeMethod.TargetObject>
+                <InArgument x:TypeArguments="x:String">[KeyName]</InArgument>
+                <InArgument x:TypeArguments="x:String">[Name]</InArgument>
+              </InvokeMethod>
+              <TryCatch DisplayName="Try Catch - Lastname" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <Assign DisplayName="Assign - Lastname" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_45">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Split(io_GUICaseDictionary("För- och efternamn").ToString.Trim, "(\S+)(?:\s+\S+)*\s+(\S+)$").Where(Function(s) Not String.IsNullOrWhiteSpace(s)).ToArray()(1)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Assign DisplayName="Assign - Lastname" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_46">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Split(io_GUICaseDictionary("För- och efternamn").ToString, " ")(1)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <Assign DisplayName="Assign - Name" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_43">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[KeyName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Efternamn (Elev)</InArgument>
+                </Assign.Value>
+              </Assign>
+              <InvokeMethod DisplayName="Invoke Method - New entry Name" sap:VirtualizedContainerService.HintSize="434,135" sap2010:WorkflowViewState.IdRef="InvokeMethod_13" MethodName="Add">
+                <InvokeMethod.TargetObject>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
+                </InvokeMethod.TargetObject>
+                <InArgument x:TypeArguments="x:String">[KeyName]</InArgument>
+                <InArgument x:TypeArguments="x:String">[Name]</InArgument>
+              </InvokeMethod>
+            </Sequence>
+            <Sequence DisplayName="Postnr and Ort" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="Sequence_50">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="KeyName" />
+                <Variable x:TypeArguments="x:String" Name="Zipcode" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch DisplayName="Try Catch - Zipcode" sap:VirtualizedContainerService.HintSize="474,25" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <Assign DisplayName="Assign - Zipcode" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_52">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Zipcode]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Split(io_GUICaseDictionary("Postnummer och ort").ToString.Trim, "[A-Za-z]+").Where(Function(s) Not String.IsNullOrWhiteSpace(s)).ToArray()(0)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,151" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Assign DisplayName="Assign - Firstname" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_53">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Zipcode]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Split(io_GUICaseDictionary("Postnummer och ort").ToString, " ")(0) + Split(io_GUICaseDictionary("Postnummer och ort").ToString, " ")(1)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <Assign DisplayName="Assign - Name" sap:VirtualizedContainerService.HintSize="474,82" sap2010:WorkflowViewState.IdRef="Assign_54">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[KeyName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Primär Postnummer</InArgument>
+                </Assign.Value>
+              </Assign>
+              <InvokeMethod DisplayName="Invoke Method - New entry Name" sap:VirtualizedContainerService.HintSize="474,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_15" MethodName="Add">
+                <InvokeMethod.TargetObject>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
+                </InvokeMethod.TargetObject>
+                <InArgument x:TypeArguments="x:String">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="KeyName" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Zipcode" />
+                </InArgument>
+              </InvokeMethod>
+              <TryCatch DisplayName="Try Catch - Ort" sap:VirtualizedContainerService.HintSize="474,314" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                <TryCatch.Variables>
+                  <Variable x:TypeArguments="x:String" Name="Ort" />
+                </TryCatch.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <Assign DisplayName="Assign - Ort" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_55">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Ort]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Split(io_GUICaseDictionary("Postnummer och ort").ToString.Trim, "[A-Za-z]+").Where(Function(s) Not String.IsNullOrWhiteSpace(s)).ToArray()(1)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,151" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Assign DisplayName="Assign - Lastname" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_56">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[Ort]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Split(io_GUICaseDictionary("Postnummer och ort").ToString, " ")(2)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <Assign DisplayName="Assign - Name" sap:VirtualizedContainerService.HintSize="474,82" sap2010:WorkflowViewState.IdRef="Assign_57">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[KeyName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Primär Postort</InArgument>
+                </Assign.Value>
+              </Assign>
+              <InvokeMethod DisplayName="Invoke Method - New entry Name" sap:VirtualizedContainerService.HintSize="474,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_16" MethodName="Add">
+                <InvokeMethod.TargetObject>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
+                </InvokeMethod.TargetObject>
+                <InArgument x:TypeArguments="x:String">[KeyName]</InArgument>
+                <InArgument x:TypeArguments="x:String">[Zipcode]</InArgument>
+              </InvokeMethod>
+            </Sequence>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_49">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <Sequence DisplayName="New Keys to Dictionary" sap:VirtualizedContainerService.HintSize="512,80" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dt_KeysMappingTable" />
           <Variable x:TypeArguments="sd:DataRow" Name="KeyRow" />
@@ -605,7 +1003,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:FilterDataTable DataTable="[dt_MappingTable]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_KeysMappingTable]" SelectColumnsMode="Remove">
+        <ui:FilterDataTable DataTable="[dt_MappingTable]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="640,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_KeysMappingTable]" SelectColumnsMode="Remove">
           <ui:FilterDataTable.Filters>
             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
               <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -618,12 +1016,12 @@
           </ui:FilterDataTable.SelectColumns>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:FilterDataTable>
-        <Assign DisplayName="Assign - Only get the relevant row by using the index from above" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_16">
+        <Assign DisplayName="Assign - Only get the relevant row by using the index from above" sap:VirtualizedContainerService.HintSize="640,81" sap2010:WorkflowViewState.IdRef="Assign_16">
           <Assign.To>
             <OutArgument x:TypeArguments="sd:DataRow">[KeyRow]</OutArgument>
           </Assign.To>
@@ -631,7 +1029,7 @@
             <InArgument x:TypeArguments="sd:DataRow">[dt_KeysMappingTable(RelevantIndex)]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign sap:VirtualizedContainerService.HintSize="640,81" sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
             <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[GUICaseDictionaryCopy]</OutArgument>
           </Assign.To>
@@ -639,13 +1037,13 @@
             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary.Copy]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[IndexDict]" DisplayName="For Each - Key in Dictionary" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="ForEach`1_11" Values="[GUICaseDictionaryCopy.Keys.ToArray]">
+        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[IndexDict]" DisplayName="For Each - Key in Dictionary" sap:VirtualizedContainerService.HintSize="640,1012" sap2010:WorkflowViewState.IdRef="ForEach`1_11" Values="[GUICaseDictionaryCopy.Keys.ToArray]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,891" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,887" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="IndexColumn" />
                 </Sequence.Variables>
@@ -654,19 +1052,19 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[IndexColumn]" DisplayName="For Each - Mapping to new keys from excel sheet" sap:VirtualizedContainerService.HintSize="562,803" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[KeyRow.ItemArray]">
+                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[IndexColumn]" DisplayName="For Each - Mapping to new keys from excel sheet" sap:VirtualizedContainerService.HintSize="562,799" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[KeyRow.ItemArray]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="currentIElement" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,677" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,674" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[currentIElement.ToString.ToString.ToLower.Trim.Equals(currentItem.ToString.ToLower.Trim)]" DisplayName="If - Element contains old key" sap:VirtualizedContainerService.HintSize="484,589" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If Condition="[currentIElement.ToString.ToString.ToLower.Trim.Equals(currentItem.ToString.ToLower.Trim)]" DisplayName="If - Element contains old key" sap:VirtualizedContainerService.HintSize="484,586" sap2010:WorkflowViewState.IdRef="If_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -674,20 +1072,24 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="300,400" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <Sequence sap:VirtualizedContainerService.HintSize="300,398" sap2010:WorkflowViewState.IdRef="Sequence_7">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <InvokeMethod DisplayName="Invoke Method - New entry with new key old value" sap:VirtualizedContainerService.HintSize="258,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
+                              <InvokeMethod DisplayName="Invoke Method - New entry with new key old value" sap:VirtualizedContainerService.HintSize="258,135" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
                                 <InvokeMethod.TargetObject>
                                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
                                 </InvokeMethod.TargetObject>
-                                <InArgument x:TypeArguments="x:String">[dt_KeysMappingTable.Columns(IndexColumn).ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String">[GUICaseDictionaryCopy(currentIElement.ToString)]</InArgument>
+                                <InArgument x:TypeArguments="x:String">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="dt_KeysMappingTable.Columns(IndexColumn).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GUICaseDictionaryCopy(currentIElement.ToString)" />
+                                </InArgument>
                               </InvokeMethod>
-                              <InvokeMethod DisplayName="Invoke Method - Remove old entry with old key" sap:VirtualizedContainerService.HintSize="258,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Remove">
+                              <InvokeMethod DisplayName="Invoke Method - Remove old entry with old key" sap:VirtualizedContainerService.HintSize="258,135" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Remove">
                                 <InvokeMethod.TargetObject>
                                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
                                 </InvokeMethod.TargetObject>
@@ -720,13 +1122,13 @@
           </ui:ForEach.Body>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEach>
       </Sequence>
-      <If Condition="[io_GUICaseDictionary.Keys.Contains(&quot;Beslutsdatum Från&quot;) AndAlso io_GUICaseDictionary(&quot;Beslutsdatum Från&quot;).ToString IsNot Nothing AndAlso &#xA;io_GUICaseDictionary.Keys.Contains(&quot;Beslutsdatum Till&quot;) AndAlso io_GUICaseDictionary(&quot;Beslutsdatum Till&quot;).ToString IsNot Nothing]" DisplayName="If - Calculate period of validity" sap:VirtualizedContainerService.HintSize="1075,25" sap2010:WorkflowViewState.IdRef="If_6">
+      <If Condition="[io_GUICaseDictionary.Keys.Contains(&quot;Beslutsdatum Från&quot;) AndAlso io_GUICaseDictionary(&quot;Beslutsdatum Från&quot;).ToString IsNot Nothing AndAlso &#xA;io_GUICaseDictionary.Keys.Contains(&quot;Beslutsdatum Till&quot;) AndAlso io_GUICaseDictionary(&quot;Beslutsdatum Till&quot;).ToString IsNot Nothing]" DisplayName="If - Calculate period of validity" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="If_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -734,7 +1136,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,712" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <Sequence sap:VirtualizedContainerService.HintSize="476,707" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="PeriodOfValidity" />
               <Variable x:TypeArguments="s:DateTime" Name="DecisionTo" />
@@ -746,7 +1148,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign - DecisionTo" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_22">
+            <Assign DisplayName="Assign - DecisionTo" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_22">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:DateTime">[DecisionTo]</OutArgument>
               </Assign.To>
@@ -754,7 +1156,7 @@
                 <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(io_GUICaseDictionary("Beslutsdatum Till").ToString, "yyyy-MM-dd", Globalization.CultureInfo.CurrentCulture)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Assign - DecisionTo" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_23">
+            <Assign DisplayName="Assign - DecisionTo" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_23">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:DateTime">[DecisionFrom]</OutArgument>
               </Assign.To>
@@ -762,7 +1164,7 @@
                 <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(io_GUICaseDictionary("Beslutsdatum Från").ToString, "yyyy-MM-dd", Globalization.CultureInfo.CurrentCulture)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Assign - PeriodOfValidity" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_24">
+            <Assign DisplayName="Assign - PeriodOfValidity" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_24">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[PeriodOfValidity]</OutArgument>
               </Assign.To>
@@ -770,7 +1172,7 @@
                 <InArgument x:TypeArguments="x:String">[(((DecisionTo - DecisionFrom).TotalDays)/365).ToString("0.00") + " år"]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Assign - KeyPeriodOfValidity" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_32">
+            <Assign DisplayName="Assign - KeyPeriodOfValidity" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_32">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[KeyPeriodOfValidity]</OutArgument>
               </Assign.To>
@@ -778,7 +1180,7 @@
                 <InArgument x:TypeArguments="x:String">Giltighetstid</InArgument>
               </Assign.Value>
             </Assign>
-            <InvokeMethod DisplayName="Invoke Method - New entry Giltighetstid" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_7" MethodName="Add">
+            <InvokeMethod DisplayName="Invoke Method - New entry Giltighetstid" sap:VirtualizedContainerService.HintSize="434,135" sap2010:WorkflowViewState.IdRef="InvokeMethod_7" MethodName="Add">
               <InvokeMethod.TargetObject>
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[io_GUICaseDictionary]</InArgument>
               </InvokeMethod.TargetObject>
@@ -797,124 +1199,55 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1075,25" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="492,168" sap2010:WorkflowViewState.IdRef="Sequence_25">
+      <If sap2010:Annotation.AnnotationText="Fullösning. Om ny adress finns i ansökan så skriver vi över dom uppgifterna i dict." Condition="[io_GUICaseDictionary(&quot;Gäller ansökan från befintlig adress eller ny adress&quot;).ToString.ToLower.Contains(&quot;ny&quot;)]" DisplayName="If - New Adress" sap:VirtualizedContainerService.HintSize="512,634" sap2010:WorkflowViewState.IdRef="If_12">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="476,414" sap2010:WorkflowViewState.IdRef="Sequence_51">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Trim to right value" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="Sequence_14">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="x:Int32" Name="IndexColumn" />
-              </Sequence.Variables>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_MappingTable]" DisplayName="Read Range Workbook - New Values" sap:VirtualizedContainerService.HintSize="666,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="MappningNyaKeys" WorkbookPath="[MappingTable]" />
-              <Assign sap:VirtualizedContainerService.HintSize="666,82" sap2010:WorkflowViewState.IdRef="Assign_10">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[GUICaseDictionaryCopy]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[io_GUICaseDictionary.Copy]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[IndexColumn]" DisplayName="For Each - Value in Dicitonary" sap:VirtualizedContainerService.HintSize="666,894" sap2010:WorkflowViewState.IdRef="ForEach`1_14" Values="[dt_MappingTable.Columns]">
-                <ui:ForEach.Body>
-                  <ActivityAction x:TypeArguments="x:Object">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="x:Object" Name="currentColumn" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="630,770" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_MappingTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="588,682" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
-                        <ui:ForEachRow.Body>
-                          <ActivityAction x:TypeArguments="sd:DataRow">
-                            <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                            </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="554,567" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                              <Sequence.Variables>
-                                <Variable x:TypeArguments="x:String" Name="RowValue" />
-                              </Sequence.Variables>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="512,82" sap2010:WorkflowViewState.IdRef="Assign_11">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[RowValue]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">[CurrentRow(IndexColumn).ToString]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <If Condition="[RowValue Isnot Nothing OrElse String.IsNullOrEmpty(RowValue)]" DisplayName="If - Corresponding Rowvalue has a value" sap:VirtualizedContainerService.HintSize="512,357" sap2010:WorkflowViewState.IdRef="If_2">
-                                <If.Then>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                                    <Sequence.Variables>
-                                      <Variable x:TypeArguments="x:String" Name="IndexInDict" />
-                                      <Variable x:TypeArguments="x:String" Name="NewValue" />
-                                    </Sequence.Variables>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_12">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:String">[IndexInDict]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">[io_GUICaseDictionary.Keys.ToList().IndexOf(currentColumn.ToString).ToString]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                  </Sequence>
-                                </If.Then>
-                                <If.Else>
-                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </Sequence>
-                                </If.Else>
-                              </If>
-                            </Sequence>
-                          </ActivityAction>
-                        </ui:ForEachRow.Body>
-                      </ui:ForEachRow>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:ForEach.Body>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:ForEach>
-            </Sequence>
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_58">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[io_GUICaseDictionary("Primär Gatuadress")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[io_GUICaseDictionary("Adress *").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_59">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[io_GUICaseDictionary("Primär Postnummer")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[io_GUICaseDictionary("Postnummer *").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_60">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[io_GUICaseDictionary("Primär Postort")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[io_GUICaseDictionary("Postadress *").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
           </Sequence>
-        </ui:CommentOut.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:CommentOut>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_52">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
     </Sequence>
   </Sequence>
 </Activity>

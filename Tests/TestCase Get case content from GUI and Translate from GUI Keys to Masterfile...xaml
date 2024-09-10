@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestCase_Translate_from_GUI_Keys_to_Masterfile__" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1708,1829" sap2010:WorkflowViewState.IdRef="TestCase_Translate_from_GUI_Keys_to_Masterfile___1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCase_Translate_from_GUI_Keys_to_Masterfile__" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1771,1829" sap2010:WorkflowViewState.IdRef="TestCase_Translate_from_GUI_Keys_to_Masterfile___1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -99,7 +99,7 @@
           <OutArgument x:TypeArguments="x:String">[caseID]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">4210</InArgument>
+          <InArgument x:TypeArguments="x:String">3550</InArgument>
         </Assign.Value>
       </Assign>
     </Sequence>
@@ -132,7 +132,7 @@
           <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[EmptyDictionary]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(Of String, String) From {{ "Ärende ID", "" }, { "För- och efternamn (Elev)", "" }, { "Personnummer (Elev)", "" }, { "För- och efternamn (VH)", "" }, { "Personnummer (VH)", "" }, { "Mailadress", "" }, { "Primär Adress", "" }, { "Primär Postnummer", "" }, { "Primär Postort", "" }, { "Sekundär Adress", "" }, { "Sekundärt Postnummer", "" }, { "Sekundär Postort", "" }, { "Skola", "" }, { "Årskurs", "" }, { "Vilket program", "" }, { "Besked", "" }, { "Datum ansökan", "" }, { "Beslutsdatum Från", "" }, { "Beslutsdatum Till", "" }, { "Giltighetstid", "" }, { "Busskortsnummer", "" }}]</InArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(Of String, String) From {{ "Ärende ID", "" }, { "För- och efternamn (Elev)", "" }, { "Personnummer (Elev)", "" }, { "För- och efternamn (VH)", "" }, { "Personnummer (VH)", "" }, { "Mailadress", "" }, {"Elevens Adress", "" }, { "Primär Postnummer", "" }, { "Primär Postort", "" }, { "Sekundär Adress", "" }, { "Sekundärt Postnummer", "" }, { "Sekundär Postort", "" }, { "Skola", "" }, { "Årskurs", "" }, { "Vilket program", "" }, { "Besked", "" }, { "Datum ansökan", "" }, { "Beslutsdatum Från", "" }, { "Beslutsdatum Till", "" }, { "Giltighetstid", "" }, { "Busskortsnummer", "" }}]</InArgument>
         </Assign.Value>
       </Assign>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Data Manipulation\GUI data to XML dictionary.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Data Manipulation\GUI data to XML dictionary.xaml">
