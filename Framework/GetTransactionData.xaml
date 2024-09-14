@@ -984,7 +984,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Uploading cases to queue.&quot;]" />
-                                      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" OutputDataTable="{x:Null}" ColumnName="firstSubmitted" DataTable="[dt_Cases]" DisplayName="Sort Data Table - Newest first" sap:VirtualizedContainerService.HintSize="510,80" sap2010:WorkflowViewState.IdRef="SortDataTable_5" Order="Decending" SortOrder="Descending" />
+                                      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" OutputDataTable="{x:Null}" ColumnName="firstSubmitted" DataTable="[dt_Cases]" DisplayName="Sort Data Table - Newest first" sap:VirtualizedContainerService.HintSize="510,80" sap2010:WorkflowViewState.IdRef="SortDataTable_6" Order="Decending" SortOrder="Descending" />
                                       <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Cases]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,474" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                                         <ui:ForEachRow.Body>
                                           <ActivityAction x:TypeArguments="sd:DataRow">
