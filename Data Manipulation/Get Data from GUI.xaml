@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1771,1808</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1771,1228</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_Data_from_GUI_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -99,7 +99,7 @@
       <AssemblyReference>System.Web</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get_Data_from_GUI" sap:VirtualizedContainerService.HintSize="558,1703" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get_Data_from_GUI" sap:VirtualizedContainerService.HintSize="542,1163" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="OePURL" />
       <Variable x:TypeArguments="x:Boolean" Name="TestElsePrd" />
@@ -110,8 +110,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="516,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Get informtion on case from GUI&quot;]" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="516,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="500,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Get informtion on case from GUI&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="500,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -147,7 +147,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <Sequence DisplayName="Sequence - Check if browser is open" sap:VirtualizedContainerService.HintSize="516,80" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence - Check if browser is open" sap:VirtualizedContainerService.HintSize="500,80" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="OePLoggedIn" />
         <Variable x:TypeArguments="x:Boolean" Name="OePOpen" />
@@ -220,7 +220,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Sequence - Go To Case" sap:VirtualizedContainerService.HintSize="516,201" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="Sequence - Go To Case" sap:VirtualizedContainerService.HintSize="500,201" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="OpendCorrectCase" />
       </Sequence.Variables>
@@ -258,7 +258,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Sequence - Get Case content" sap:VirtualizedContainerService.HintSize="516,452" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence DisplayName="Sequence - Get Case content" sap:VirtualizedContainerService.HintSize="500,452" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -287,7 +287,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="476,301" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence sap:VirtualizedContainerService.HintSize="476,302" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -308,45 +308,68 @@
         </TryCatch.Catches>
       </TryCatch>
     </Sequence>
-    <If Condition="[Not TestElsePrd]" sap:VirtualizedContainerService.HintSize="516,565" sap2010:WorkflowViewState.IdRef="If_4">
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="480,376" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="500,25" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="300,113" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,288" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-            <TryCatch.Try>
-              <og:Navigate_To_Case_Queues DisplayName="Navigate To Case Queues" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="Navigate_To_Case_Queues_1" Timeout="1000" isTest="[TestElsePrd]" />
-            </TryCatch.Try>
-            <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <If Condition="[Not TestElsePrd]" DisplayName="If - Navigate To Case Queues" sap:VirtualizedContainerService.HintSize="258,25" sap2010:WorkflowViewState.IdRef="If_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="480,376" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ActivityAction x:TypeArguments="s:Exception">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                  </ActivityAction.Argument>
-                </ActivityAction>
-              </Catch>
-            </TryCatch.Catches>
-          </TryCatch>
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,288" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <TryCatch.Try>
+                    <og:Navigate_To_Case_Queues DisplayName="Navigate To Case Queues" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="Navigate_To_Case_Queues_1" Timeout="1000" isTest="[TestElsePrd]" />
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
         </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </Sequence>
-      </If.Else>
-    </If>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
   </Sequence>
 </Activity>

@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1771,1436</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1771,1516</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -90,6 +90,7 @@
       <AssemblyReference>OpenEplatform.API</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="960,1371" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -584,7 +585,7 @@
                                 <av:PointCollection x:Key="ConnectorLocation">424.283333333334,694.04 491.25,694.04 491.25,746.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Check if cases already exsists in excel" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                            <Sequence DisplayName="Check if cases already exsists in excel" sap:VirtualizedContainerService.HintSize="698,1732" sap2010:WorkflowViewState.IdRef="Sequence_22">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="scg:List(x:String)" Name="IDsToDrop" />
                                 <Variable x:TypeArguments="sd:DataTable" Name="dt_FilterCases" />
@@ -623,7 +624,7 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="dt_MasterUnfilterd comes from earlier in the flowchart" DataTable="[dt_MasterFile]" DisplayName="For Each Row in Data Table - MasterFile" sap:VirtualizedContainerService.HintSize="560,781" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="dt_MasterFile comes from earlier in the flowchart" DataTable="[dt_MasterFile]" DisplayName="For Each Row in Data Table - MasterFile" sap:VirtualizedContainerService.HintSize="560,781" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                         <ui:ForEachRow.Body>
                                           <ActivityAction x:TypeArguments="sd:DataRow">
                                             <ActivityAction.Argument>
@@ -635,7 +636,7 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <If Condition="[CurrentRowMaster.ItemArray.Contains(CDbl(CurrentRow(0).ToString))]" DisplayName="If - ID exsists in datarow from masterfile" sap:VirtualizedContainerService.HintSize="484,545" sap2010:WorkflowViewState.IdRef="If_6">
+                                              <If Condition="[CurrentRowMaster(0).Equals(CurrentRow(0))]" DisplayName="If - ID exsists in datarow from masterfile" sap:VirtualizedContainerService.HintSize="484,545" sap2010:WorkflowViewState.IdRef="If_6">
                                                 <If.Then>
                                                   <Sequence sap:VirtualizedContainerService.HintSize="376,356" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                                     <sap:WorkflowViewStateService.ViewState>
@@ -755,7 +756,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">630,980 820,980 820,230 400,230</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Upload to queue" sap:VirtualizedContainerService.HintSize="572,1539" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                    <Sequence DisplayName="Upload to queue" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1102,7 +1103,7 @@
     </Flowchart>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="918,25" sap2010:WorkflowViewState.IdRef="CommentOut_4">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="506,200" sap2010:WorkflowViewState.IdRef="Sequence_35">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="616,200" sap2010:WorkflowViewState.IdRef="Sequence_35">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
