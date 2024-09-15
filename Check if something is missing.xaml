@@ -20,7 +20,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1771,3491</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1771,3455</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Check_if_something_is_missing_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -93,13 +93,13 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check_if_something_is_missing" sap:VirtualizedContainerService.HintSize="966,3426" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check_if_something_is_missing" sap:VirtualizedContainerService.HintSize="966,3390" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Check if something is missing" sap:VirtualizedContainerService.HintSize="924,3338" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Check if something is missing" sap:VirtualizedContainerService.HintSize="924,3302" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="ControlFile" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_ControlFile" />
@@ -153,7 +153,7 @@
                 <OutArgument x:TypeArguments="x:String">[FilterDataRowNewAdress]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[if(in_NewAdress, "Ny Adress", "")]</InArgument>
+                <InArgument x:TypeArguments="x:String">Ny Adress</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
@@ -192,7 +192,7 @@
           </scg:List>
         </ui:FilterDataTable.SelectColumns>
       </ui:FilterDataTable>
-      <If Condition="[Not String.IsNullOrEmpty(FilterDataRowNewAdress)]" DisplayName="If - Also New Adress" sap:VirtualizedContainerService.HintSize="862,438" sap2010:WorkflowViewState.IdRef="If_7">
+      <If Condition="[in_NewAdress]" DisplayName="If - Also New Adress" sap:VirtualizedContainerService.HintSize="862,408" sap2010:WorkflowViewState.IdRef="If_7">
         <If.Then>
           <Sequence sap:VirtualizedContainerService.HintSize="376,249" sap2010:WorkflowViewState.IdRef="Sequence_23">
             <sap:WorkflowViewStateService.ViewState>
@@ -222,12 +222,31 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <Sequence sap:VirtualizedContainerService.HintSize="376,249" sap2010:WorkflowViewState.IdRef="Sequence_24">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:FilterDataTable DataTable="[dt_ControlFile]" DisplayName="Filter Data Table - Get right row depending on växlevis or regular" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="334,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[dt_ControlFile]" SelectColumnsMode="Remove">
+              <ui:FilterDataTable.Filters>
+                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                  <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                    <ui:FilterOperationArgument.Column>
+                      <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                    </ui:FilterOperationArgument.Column>
+                    <ui:FilterOperationArgument.Operand>
+                      <InArgument x:TypeArguments="x:String">["Ny Adress"]</InArgument>
+                    </ui:FilterOperationArgument.Operand>
+                  </ui:FilterOperationArgument>
+                </scg:List>
+              </ui:FilterDataTable.Filters>
+              <ui:FilterDataTable.SelectColumns>
+                <scg:List x:TypeArguments="InArgument" Capacity="4">
+                  <x:Null />
+                </scg:List>
+              </ui:FilterDataTable.SelectColumns>
+            </ui:FilterDataTable>
           </Sequence>
         </If.Else>
       </If>
@@ -411,13 +430,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="862,1742" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[in_CaseInformation.Keys]">
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="862,1736" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[in_CaseInformation.Keys]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="826,1616" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="826,1611" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Name="i" />
               </Sequence.Variables>
@@ -426,19 +445,19 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[I]" DisplayName="For Each - Column in dt" sap:VirtualizedContainerService.HintSize="784,1528" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[dt_ControlFile.Columns]">
+              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[I]" DisplayName="For Each - Column in dt" sap:VirtualizedContainerService.HintSize="784,1523" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[dt_ControlFile.Columns]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="currentColumn" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="748,1402" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="748,1398" sap2010:WorkflowViewState.IdRef="Sequence_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[currentItem.ToString.ToLower.Trim.Equals(currentColumn.ToString.ToLower.Trim)]" DisplayName="If - Right Key and column is found" sap:VirtualizedContainerService.HintSize="706,1314" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If Condition="[currentItem.ToString.ToLower.Trim.Equals(currentColumn.ToString.ToLower.Trim)]" DisplayName="If - Right Key and column is found" sap:VirtualizedContainerService.HintSize="706,1310" sap2010:WorkflowViewState.IdRef="If_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -446,31 +465,31 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="670,1125" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence sap:VirtualizedContainerService.HintSize="670,1122" sap2010:WorkflowViewState.IdRef="Sequence_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[dt_ControlFile(0)(i).ToString.Equals(RequierdData)]" DisplayName="If - Controlfile says value is needed" sap:VirtualizedContainerService.HintSize="628,1037" sap2010:WorkflowViewState.IdRef="If_2">
+                            <If Condition="[dt_ControlFile(0)(i).ToString.Equals(RequierdData)]" DisplayName="If - Controlfile says value is needed" sap:VirtualizedContainerService.HintSize="628,1034" sap2010:WorkflowViewState.IdRef="If_2">
                               <If.Then>
-                                <Sequence sap:VirtualizedContainerService.HintSize="592,848" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                <Sequence sap:VirtualizedContainerService.HintSize="592,846" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <TryCatch DisplayName="Try Catch - Dictionary Value contains no data" sap:VirtualizedContainerService.HintSize="550,760" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                  <TryCatch DisplayName="Try Catch - Dictionary Value contains no data" sap:VirtualizedContainerService.HintSize="550,758" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                                     <TryCatch.Try>
-                                      <If Condition="[String.IsNullOrEmpty(in_CaseInformation(currentItem.ToString).ToString) OrElse in_Caseinformation(currentItem.ToString).ToString.ToLower.Equals(in_NoDataFound)]" DisplayName="If - Dictionary Value contains no data" sap:VirtualizedContainerService.HintSize="512,532" sap2010:WorkflowViewState.IdRef="If_1">
+                                      <If Condition="[String.IsNullOrEmpty(in_CaseInformation(currentItem.ToString).ToString) OrElse in_Caseinformation(currentItem.ToString).ToString.ToLower.Equals(in_NoDataFound)]" DisplayName="If - Dictionary Value contains no data" sap:VirtualizedContainerService.HintSize="512,530" sap2010:WorkflowViewState.IdRef="If_1">
                                         <If.Then>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="476,343" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="476,342" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign DisplayName="Assign - DataIsMissing" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                            <Assign DisplayName="Assign - DataIsMissing" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_1">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Boolean">[out_DataIsMissing]</OutArgument>
                                               </Assign.To>
@@ -504,13 +523,13 @@
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                           </ActivityAction.Argument>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="476,343" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="476,339" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign DisplayName="Assign - DataIsMissing" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                            <Assign DisplayName="Assign - DataIsMissing" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_2">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Boolean">[out_DataIsMissing]</OutArgument>
                                               </Assign.To>
