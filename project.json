@@ -1,6 +1,6 @@
 {
-  "name": "Masterfil För Skolskjuts",
-  "description": "Masterfil för skolskjuts gällande både grundskola och elevresor. ",
+  "name": "Masterfil För Skolskjuts Elevresor",
+  "description": "Masterfil för skolskjuts gällande elevresor. ",
   "main": "Main.xaml",
   "dependencies": {
     "Microsoft.Activities.Extensions": "[2.0.3.8]",
@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.5.8",
+  "projectVersion": "1.5.9",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
