@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1771,1434</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1073,1925</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Write_to_excel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -87,16 +87,15 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Write_to_excel" sap:VirtualizedContainerService.HintSize="538,1289" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Write_to_excel" sap:VirtualizedContainerService.HintSize="979,1860" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Write to excel" sap:VirtualizedContainerService.HintSize="496,1201" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Write to excel" sap:VirtualizedContainerService.HintSize="937,1772" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:List(x:String)" Name="ListOfValues" />
         <Variable x:TypeArguments="x:Int32" Name="NrOfRowsInMasterFile" />
@@ -106,8 +105,8 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Write to master file&quot;]" />
-      <ui:CommentOut sap2010:Annotation.AnnotationText="Moved to &quot;Check if case is valid&quot; and &quot;Check if case is NOT Valid&quot;" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="875,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Write to master file&quot;]" />
+      <ui:CommentOut sap2010:Annotation.AnnotationText="Moved to &quot;Check if case is valid&quot; and &quot;Check if case is NOT Valid&quot;" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="875,82" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="492,168" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
@@ -162,7 +161,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <TryCatch.Try>
-                  <If Condition="[System.Text.RegularExpressions.Regex.IsMatch(in_CaseInformation(&quot;Personnummer (Elev)&quot;),&quot;[0-9]&quot;) AndAlso&#xD;&#xA;in_CaseInformation(&quot;Personnummer (Elev)&quot;).ToLower.Contains(&quot;tf&quot;)]" DisplayName="If - Citizen ID is TF" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[System.Text.RegularExpressions.Regex.IsMatch(in_CaseInformation(&quot;Personnummer (Elev)&quot;),&quot;[0-9]&quot;) AndAlso&#xA;in_CaseInformation(&quot;Personnummer (Elev)&quot;).ToLower.Contains(&quot;tf&quot;)]" DisplayName="If - Citizen ID is TF" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="If_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -419,7 +418,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <Assign DisplayName="Assign - Empty Array of String" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="Assign - Empty Array of String" sap:VirtualizedContainerService.HintSize="875,82" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:List(x:String)">[ListOfValues]</OutArgument>
         </Assign.To>
@@ -427,7 +426,7 @@
           <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each - Column name in Master File" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_dt_MasterFile.Columns]">
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each - Column name in Master File" sap:VirtualizedContainerService.HintSize="875,596" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[in_dt_MasterFile.Columns]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -439,7 +438,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[in_CaseInformation.Keys.Contains(currentItem.ToString) AndAlso &#xD;&#xA;(Not String.IsNullOrEmpty(in_CaseInformation(currentItem.ToString)) OrElse in_CaseInformation(currentItem.ToString) IsNot Nothing)]" DisplayName="If - Value is not null or empty" sap:VirtualizedContainerService.HintSize="797,382" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[in_CaseInformation.Keys.Contains(currentItem.ToString) AndAlso &#xA;(Not String.IsNullOrEmpty(in_CaseInformation(currentItem.ToString)) OrElse in_CaseInformation(currentItem.ToString) IsNot Nothing)]" DisplayName="If - Value is not null or empty" sap:VirtualizedContainerService.HintSize="797,382" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -463,7 +462,13 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to Array" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="Ingen data" List="[ListOfValues]" />
+                    <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to Array" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" List="[ListOfValues]">
+                      <uasa:AppendItemToList.ItemToAppend>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </uasa:AppendItemToList.ItemToAppend>
+                    </uasa:AppendItemToList>
                   </Sequence>
                 </If.Else>
               </If>
@@ -472,12 +477,12 @@
         </ui:ForEach.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <Assign DisplayName="Assign - NrOfRowsInMasterFile Including column row  and the row added below" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign DisplayName="Assign - NrOfRowsInMasterFile Including column row  and the row added below" sap:VirtualizedContainerService.HintSize="875,82" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[NrOfRowsInMasterFile]</OutArgument>
         </Assign.To>
@@ -485,8 +490,8 @@
           <InArgument x:TypeArguments="x:Int32">[in_dt_MasterFile.Rows.Count + 2]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ClearDataTable DataTable="[in_dt_MasterFile]" DisplayName="Clear Data Table - Empty DataTable" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
-      <TryCatch DisplayName="Try Catch - Requierd Keys are missing" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <ui:ClearDataTable DataTable="[in_dt_MasterFile]" DisplayName="Clear Data Table - Empty DataTable" sap:VirtualizedContainerService.HintSize="875,80" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
+      <TryCatch DisplayName="Try Catch - Requierd Keys are missing" sap:VirtualizedContainerService.HintSize="875,25" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -583,7 +588,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[ListOfValues.ToArray]" DataTable="[in_dt_MasterFile]" DisplayName="Add New Data Row To Master File" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[ListOfValues.ToArray]" DataTable="[in_dt_MasterFile]" DisplayName="Add New Data Row To Master File" sap:VirtualizedContainerService.HintSize="875,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
       <ui:WriteRange AddHeaders="False" DataTable="[in_dt_MasterFile]" DisplayName="Write Range Workbook - To Master File" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Blad1" StartingCell="[&quot;A&quot; + NrOfRowsInMasterFile.ToString]" WorkbookPath="[in_MasterFile]" />
     </Sequence>
   </Sequence>
