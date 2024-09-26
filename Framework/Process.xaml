@@ -430,7 +430,7 @@
             <av:PointCollection x:Key="ConnectorLocation">491.641666666667,210.54 491.641666666667,260.54</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Gymnaseskola Get XML data" sap:VirtualizedContainerService.HintSize="558,3371" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Gymnaseskola Get XML data" sap:VirtualizedContainerService.HintSize="558,2827" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="sxl:XNamespace" Default="[&quot;http://www.oeplatform.org/version/2.0/schemas/flowinstance&quot;]" Name="FlowInstance" />
             <Variable x:TypeArguments="x:Boolean" Name="ApplyingForMyself" />
@@ -748,7 +748,7 @@
             </InvokeMethod>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Added case ID to dictionary&quot;]" />
           </Sequence>
-          <Sequence DisplayName="Check Last Updated" sap:VirtualizedContainerService.HintSize="496,238" sap2010:WorkflowViewState.IdRef="Sequence_485">
+          <Sequence DisplayName="Check Last Updated (Used later for sorting)" sap:VirtualizedContainerService.HintSize="496,80" sap2010:WorkflowViewState.IdRef="Sequence_485">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Key" />
               <Variable x:TypeArguments="x:String" Name="NodePath" />
@@ -757,7 +757,7 @@
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -770,13 +770,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,290" sap2010:WorkflowViewState.IdRef="Sequence_491">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_491">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign - CaseLastUpdated" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_282">
+                  <Assign DisplayName="Assign - CaseLastUpdated" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_282">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[CaseLastUpdated]</OutArgument>
                     </Assign.To>
@@ -784,7 +784,7 @@
                       <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Updated Date").ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="Assign - CaseLastUpdatedDate" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_287">
+                  <Assign DisplayName="Assign - CaseLastUpdatedDate" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_287">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:DateTime">[CaseLastUpdatedDate]</OutArgument>
                     </Assign.To>
@@ -812,7 +812,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign - NodePath" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_284">
+                      <Assign DisplayName="Assign - NodePath" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_284">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[NodePath]</OutArgument>
                         </Assign.To>
@@ -857,36 +857,6 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-          </Sequence>
-          <Sequence DisplayName="Last Updated (used later for sorting)" sap:VirtualizedContainerService.HintSize="496,346" sap2010:WorkflowViewState.IdRef="Sequence_480">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="Key" />
-              <Variable x:TypeArguments="x:String" Name="NodePath" />
-              <Variable x:TypeArguments="x:String" Name="Value" />
-              <Variable x:TypeArguments="x:Int32" Name="StudentCitizenIDRowNr" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign - NodePath" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_277">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[NodePath]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">Header,LastSubmitted</InArgument>
-              </Assign.Value>
-            </Assign>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="XML Data Value to Dictionary.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Data Manipulation\XML Data Value to Dictionary.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_XMLNode">[NodePath]</InArgument>
-                <InArgument x:TypeArguments="sxl:XDocument" x:Key="in_XML">[CaseXML]</InArgument>
-                <InArgument x:TypeArguments="sxl:XNamespace" x:Key="in_FlowInstance">[FlowInstance]</InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_Value">[Value]</OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
           </Sequence>
           <TryCatch DisplayName="Try Catch - First name Student" sap:VirtualizedContainerService.HintSize="496,25" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <TryCatch.Variables>
