@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1073,3155</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1073,3235</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -193,7 +193,7 @@
               <OutArgument x:TypeArguments="x:Int32">[CaseID]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:Int32">[CInt(in_TransactionItem.SpecificContent("Case ID").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:Int32">[CInt(in_TransactionItem.SpecificContent("Case ID").ToString.Trim)]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
@@ -244,13 +244,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="492,486" sap2010:WorkflowViewState.IdRef="Sequence_174">
+        <Sequence sap:VirtualizedContainerService.HintSize="492,168" sap2010:WorkflowViewState.IdRef="Sequence_174">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Get Case XML" sap:VirtualizedContainerService.HintSize="450,398" sap2010:WorkflowViewState.IdRef="Sequence_314">
+          <Sequence DisplayName="Get Case XML" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="Sequence_314">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="OePCredential" />
               <Variable x:TypeArguments="x:String" Name="OePURL" />
@@ -259,7 +259,7 @@
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -323,7 +323,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <o:Get_Case_XML_or_PDF FoundCase="{x:Null}" PDFFilePath="{x:Null}" TempFolder="{x:Null}" CaseDataAsXMLDocument="[CaseXML]" CaseID="[CaseID]" DisplayName="Get Case XML or PDF" DomainURL="[OePURL]" FilenameWithoutExtension="Temp" GetAsPDF="False" sap:VirtualizedContainerService.HintSize="284,292" sap2010:WorkflowViewState.IdRef="Get_Case_XML_or_PDF_2" NumberOfTries="2" Password="[OePPassword]" RequestTimeout="15000" Username="[OePUsername]">
+                    <o:Get_Case_XML_or_PDF FoundCase="{x:Null}" PDFFilePath="{x:Null}" TempFolder="{x:Null}" CaseDataAsXMLDocument="[CaseXML]" CaseID="[CaseID]" DisplayName="Get Case XML or PDF" DomainURL="[OePURL]" FilenameWithoutExtension="Temp" GetAsPDF="False" sap:VirtualizedContainerService.HintSize="284,292" sap2010:WorkflowViewState.IdRef="Get_Case_XML_or_PDF_2" NumberOfTries="3" Password="[OePPassword]" RequestTimeout="15000" Username="[OePUsername]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -430,7 +430,7 @@
             <av:PointCollection x:Key="ConnectorLocation">491.641666666667,210.54 491.641666666667,260.54</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Gymnaseskola Get XML data" sap:VirtualizedContainerService.HintSize="558,2827" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Gymnaseskola Get XML data" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="sxl:XNamespace" Default="[&quot;http://www.oeplatform.org/version/2.0/schemas/flowinstance&quot;]" Name="FlowInstance" />
             <Variable x:TypeArguments="x:Boolean" Name="ApplyingForMyself" />
