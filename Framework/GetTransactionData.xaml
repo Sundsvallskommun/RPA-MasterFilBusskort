@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1073,1436</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1780,1436</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -370,7 +370,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:SortDataTable>
-                  <Sequence DisplayName="Updating Case that is No longer valid" sap:VirtualizedContainerService.HintSize="450,273" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                  <Sequence DisplayName="Updating Case that is No longer valid" sap:VirtualizedContainerService.HintSize="450,288" sap2010:WorkflowViewState.IdRef="Sequence_111">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -402,7 +402,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:FilterDataTable>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="För att få helt automatiska avslag behöver även de existerade giltiga ärenden som uppdateras till ogiltiga här också ändra status." DataTable="[dt_OnlyValidCases]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,97" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="För att få helt automatiska avslag behöver även de existerade giltiga ärenden som uppdateras till ogiltiga här också ändra status." DataTable="[dt_OnlyValidCases]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,112" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
@@ -1100,7 +1100,7 @@
                                 <av:PointCollection x:Key="ConnectorLocation">424.283333333334,695.04 491.25,695.04 491.25,746.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Check if cases already exsists in excel" sap:VirtualizedContainerService.HintSize="1097,1908" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                            <Sequence DisplayName="Check if cases already exsists in excel" sap:VirtualizedContainerService.HintSize="496,886" sap2010:WorkflowViewState.IdRef="Sequence_22">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="scg:List(x:String)" Name="IDsToDrop" />
                                 <Variable x:TypeArguments="sd:DataTable" Name="dt_FilterCases" />
@@ -1111,8 +1111,8 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1035,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Check if case has already been handled.&quot;]" />
-                              <Assign DisplayName="Assign - List of Droped IDs" sap:VirtualizedContainerService.HintSize="1035,82" sap2010:WorkflowViewState.IdRef="Assign_13">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Check if case has already been handled.&quot;]" />
+                              <Assign DisplayName="Assign - List of Droped IDs" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_13">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="scg:List(x:String)">[IDsToDrop]</OutArgument>
                                 </Assign.To>
@@ -1120,7 +1120,7 @@
                                   <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Assign - Empty Datatable" sap:VirtualizedContainerService.HintSize="1035,82" sap2010:WorkflowViewState.IdRef="Assign_15">
+                              <Assign DisplayName="Assign - Empty Datatable" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_15">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="sd:DataTable">[dt_FilterCases]</OutArgument>
                                 </Assign.To>
@@ -1128,7 +1128,7 @@
                                   <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Assign - MatchingValues where caseID exists in both dt" sap:VirtualizedContainerService.HintSize="1035,83" sap2010:WorkflowViewState.IdRef="Assign_49">
+                              <Assign DisplayName="Assign - MatchingValues where caseID exists in both dt" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_49">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="scg:List(x:String)">[MatchingValues]</OutArgument>
                                 </Assign.To>
@@ -1140,7 +1140,7 @@
     .ToList()]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Matches found" sap:VirtualizedContainerService.HintSize="1035,482" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[MatchingValues]">
+                              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Matches found" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[MatchingValues]">
                                 <ui:ForEach.Body>
                                   <ActivityAction x:TypeArguments="x:String">
                                     <ActivityAction.Argument>
@@ -1164,8 +1164,14 @@
                                     </Sequence>
                                   </ActivityAction>
                                 </ui:ForEach.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
                               </ui:ForEach>
-                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1035,25" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="CommentOut_11">
                                 <ui:CommentOut.Body>
                                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="678,1068" sap2010:WorkflowViewState.IdRef="Sequence_114">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1260,24 +1266,23 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:CommentOut>
-                              <If sap2010:Annotation.AnnotationText="" Condition="[dt_Cases.AsEnumerable().Any(Function(row) IDsToDrop.Contains(row(0).ToString()))]" DisplayName="If - IDs to drop" sap:VirtualizedContainerService.HintSize="1035,589" sap2010:WorkflowViewState.IdRef="If_7">
+                              <If Condition="[dt_Cases.AsEnumerable().Any(Function(row) IDsToDrop.Contains(row(0).ToString()))]" DisplayName="If - IDs to drop" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="If_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="514,398" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="514,397" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <TryCatch DisplayName="Try Catch - Assign - dt_FilterCases" sap:VirtualizedContainerService.HintSize="472,310" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                    <TryCatch DisplayName="Try Catch - Assign - dt_FilterCases" sap:VirtualizedContainerService.HintSize="472,309" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                       <TryCatch.Try>
-                                        <Assign DisplayName="Assign - dt_FilterCases" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                        <Assign DisplayName="Assign - dt_FilterCases" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_14">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="sd:DataTable">[dt_FilterCases]</OutArgument>
                                           </Assign.To>
@@ -1298,14 +1303,14 @@
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                             </ActivityAction.Argument>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="476,302" sap2010:WorkflowViewState.IdRef="Sequence_102">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="476,301" sap2010:WorkflowViewState.IdRef="Sequence_102">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;All cases found exsists in file.&quot;]" />
-                                              <Assign DisplayName="Assign - dt_FilterCases" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                              <Assign DisplayName="Assign - dt_FilterCases" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_30">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="sd:DataTable">[dt_FilterCases]</OutArgument>
                                                 </Assign.To>
@@ -1321,13 +1326,13 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_30">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign DisplayName="Assign - dt_FilterCases" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                    <Assign DisplayName="Assign - dt_FilterCases" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_16">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="sd:DataTable">[dt_FilterCases]</OutArgument>
                                       </Assign.To>
@@ -1338,7 +1343,7 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <Assign DisplayName="Assign - Re-write the sorted dt to dt_Cases" sap:VirtualizedContainerService.HintSize="1035,82" sap2010:WorkflowViewState.IdRef="Assign_17">
+                              <Assign DisplayName="Assign - Re-write the sorted dt to dt_Cases" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_17">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="sd:DataTable">[dt_Cases]</OutArgument>
                                 </Assign.To>
