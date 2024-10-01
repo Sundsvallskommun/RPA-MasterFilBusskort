@@ -436,7 +436,7 @@
             <av:PointCollection x:Key="ConnectorLocation">491.641666666667,210.54 491.641666666667,260.54</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Gymnaseskola Get XML data" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Gymnaseskola Get XML data" sap:VirtualizedContainerService.HintSize="546,2827" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="sxl:XNamespace" Default="[&quot;http://www.oeplatform.org/version/2.0/schemas/flowinstance&quot;]" Name="FlowInstance" />
             <Variable x:TypeArguments="x:Boolean" Name="ApplyingForMyself" />
@@ -449,7 +449,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,94" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Processing a Gymnase-case.&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Processing a Gymnase-case.&quot;]" />
           <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -2117,7 +2117,7 @@
                     <OutArgument x:TypeArguments="x:String">[StudentPostalCode]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[Value.ToString.Trim]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[Value.ToString.Trim.Replace(" ", "")]</InArgument>
                   </Assign.Value>
                 </Assign>
                 <InvokeMethod DisplayName="Invoke Method - Student Postal Code" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_22" MethodName="Add">
@@ -2149,7 +2149,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Warn" Message="[&quot;Could not add Student Postal Code to dictionary, did not find first name in application.&quot;]" />
-                    <InvokeMethod DisplayName="Invoke Method - Student Postal Code" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="InvokeMethod_25" MethodName="Add">
+                    <InvokeMethod DisplayName="Invoke Method - Student Postal Code" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_25" MethodName="Add">
                       <InvokeMethod.TargetObject>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[CaseInformation]</InArgument>
                       </InvokeMethod.TargetObject>
@@ -2837,7 +2837,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <If Condition="[NewAdress]" DisplayName="If - Ny adress" sap:VirtualizedContainerService.HintSize="484,435" sap2010:WorkflowViewState.IdRef="If_102">
+          <If Condition="[NewAdress]" DisplayName="If - Ny adress" sap:VirtualizedContainerService.HintSize="484,432" sap2010:WorkflowViewState.IdRef="If_102">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="300,243" sap2010:WorkflowViewState.IdRef="Sequence_335">
                 <sap:WorkflowViewStateService.ViewState>
@@ -2993,7 +2993,7 @@
                           <OutArgument x:TypeArguments="x:String">[StudentSecondPostalCode]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[Value.ToString.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[Value.ToString.Trim.Replace(" ", "")]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <InvokeMethod DisplayName="Invoke Method - Student Second Postal Code" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_73" MethodName="Add">
