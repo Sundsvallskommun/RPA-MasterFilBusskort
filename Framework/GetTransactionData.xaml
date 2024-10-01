@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1780,1436</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1073,1436</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -111,7 +111,6 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Web</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="960,1371" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -1100,7 +1099,7 @@
                                 <av:PointCollection x:Key="ConnectorLocation">424.283333333334,695.04 491.25,695.04 491.25,746.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Check if cases already exsists in excel" sap:VirtualizedContainerService.HintSize="496,886" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                            <Sequence DisplayName="Check if cases already exsists in excel" sap:VirtualizedContainerService.HintSize="496,887" sap2010:WorkflowViewState.IdRef="Sequence_22">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="scg:List(x:String)" Name="IDsToDrop" />
                                 <Variable x:TypeArguments="sd:DataTable" Name="dt_FilterCases" />
@@ -1112,7 +1111,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Check if case has already been handled.&quot;]" />
-                              <Assign DisplayName="Assign - List of Droped IDs" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_13">
+                              <Assign DisplayName="Assign - List of Droped IDs" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_13">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="scg:List(x:String)">[IDsToDrop]</OutArgument>
                                 </Assign.To>
@@ -1120,7 +1119,7 @@
                                   <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Assign - Empty Datatable" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_15">
+                              <Assign DisplayName="Assign - Empty Datatable" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_15">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="sd:DataTable">[dt_FilterCases]</OutArgument>
                                 </Assign.To>
@@ -1128,7 +1127,7 @@
                                   <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Assign - MatchingValues where caseID exists in both dt" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_49">
+                              <Assign DisplayName="Assign - MatchingValues where caseID exists in both dt" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_49">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="scg:List(x:String)">[MatchingValues]</OutArgument>
                                 </Assign.To>
@@ -1152,14 +1151,12 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Ärende med ID: &quot; + currentItem + &quot; har redan behandlats.&quot;]" />
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Trace" Message="[&quot;Ärende med ID: &quot; + currentItem + &quot; har redan behandlats.&quot;]" />
                                       <InvokeMethod DisplayName="Invoke Method - Add to List" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Add">
                                         <InvokeMethod.TargetObject>
                                           <InArgument x:TypeArguments="scg:List(x:String)">[IDsToDrop]</InArgument>
                                         </InvokeMethod.TargetObject>
-                                        <InArgument x:TypeArguments="x:String">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentItem" />
-                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String">[currentItem]</InArgument>
                                       </InvokeMethod>
                                     </Sequence>
                                   </ActivityAction>
@@ -1343,7 +1340,7 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <Assign DisplayName="Assign - Re-write the sorted dt to dt_Cases" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_17">
+                              <Assign DisplayName="Assign - Re-write the sorted dt to dt_Cases" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_17">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="sd:DataTable">[dt_Cases]</OutArgument>
                                 </Assign.To>
