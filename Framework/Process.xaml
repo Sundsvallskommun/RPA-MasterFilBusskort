@@ -176,7 +176,7 @@
               <OutArgument x:TypeArguments="x:Int32">[CaseID]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:Int32">191602</InArgument>
+              <InArgument x:TypeArguments="x:Int32">60864</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
@@ -207,7 +207,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="300,243" sap2010:WorkflowViewState.IdRef="Sequence_173">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,333" sap2010:WorkflowViewState.IdRef="Sequence_173">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="TEMP" />
             <Variable x:TypeArguments="upr:ILocalResource" Name="TEMPFilePath" />
@@ -217,15 +217,20 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:PathExists Exists="{x:Null}" DisplayName="Path Exists - For Test" sap:VirtualizedContainerService.HintSize="258,25" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="C:\Users\jon27san\Downloads\Busskortsansökan för gymnasieelever - 191602.xml" PathType="File" Resource="[TEMPFilePath]">
+          <ui:PathExists Exists="{x:Null}" DisplayName="Path Exists - For Test" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="PathExists_1" PathType="File" Resource="[TEMPFilePath]">
+            <ui:PathExists.Path>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </ui:PathExists.Path>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:PathExists>
-          <ui:ReadTextFile FileName="{x:Null}" Content="[TEMP]" DisplayName="Read Text File - For Test" Encoding="iso-8859-1" File="[TEMPFilePath]" sap:VirtualizedContainerService.HintSize="258,25" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+          <ui:ReadTextFile FileName="{x:Null}" Content="[TEMP]" DisplayName="Read Text File - For Test" Encoding="iso-8859-1" File="[TEMPFilePath]" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -233,7 +238,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ReadTextFile>
-          <ui:DeserializeXml DisplayName="Deserialize XML - For Test" sap:VirtualizedContainerService.HintSize="258,25" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[CaseXML]" XMLString="[TEMP]">
+          <ui:DeserializeXml DisplayName="Deserialize XML - For Test" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[CaseXML]" XMLString="[TEMP]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -4615,7 +4620,7 @@
                         <av:Point x:Key="ShapeLocation">422.283333333334,501.54</av:Point>
                         <av:Size x:Key="ShapeSize">139,87</av:Size>
                         <av:PointCollection x:Key="TrueConnector">422.283333333334,545.04 372.283333333334,545.04</av:PointCollection>
-                        <av:PointCollection x:Key="FalseConnector">562.283333333334,545.04 590,545.04 590,1188.5 500,1188.5 500,1218.5</av:PointCollection>
+                        <av:PointCollection x:Key="FalseConnector">562.283333333334,545.04 594.5,545.04 594.5,1144.04 500,1144.04 500,1218.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <FlowDecision.True>
@@ -4769,7 +4774,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">500,1299.5 500,1358.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Sequence DisplayName="Re-write Citizen-and TF ID, mark Protected ID" sap:VirtualizedContainerService.HintSize="500,659" sap2010:WorkflowViewState.IdRef="Sequence_468">
+                                                <Sequence DisplayName="Re-write Citizen-and TF ID, mark Protected ID" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_468">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:String" Name="CommentProtectedID" />
                                                   </Sequence.Variables>
@@ -4779,7 +4784,7 @@
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="438,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_21">
+                                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="550,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_21">
                                                     <ui:MultipleAssign.AssignOperations>
                                                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_115">
@@ -4799,7 +4804,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:MultipleAssign>
-                                                  <TryCatch DisplayName="Try Catch - Citizen ID, rewrite to right format, VH and Student" sap:VirtualizedContainerService.HintSize="438,25" sap2010:WorkflowViewState.IdRef="TryCatch_50">
+                                                  <TryCatch DisplayName="Try Catch - Citizen ID, rewrite to right format, VH and Student" sap:VirtualizedContainerService.HintSize="550,25" sap2010:WorkflowViewState.IdRef="TryCatch_50">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -4941,17 +4946,17 @@
                                                       </Catch>
                                                     </TryCatch.Catches>
                                                   </TryCatch>
-                                                  <TryCatch DisplayName="Try Catch - Citizen ID is Protected" sap:VirtualizedContainerService.HintSize="438,288" sap2010:WorkflowViewState.IdRef="TryCatch_51">
+                                                  <TryCatch DisplayName="Try Catch - Citizen ID is Protected" sap:VirtualizedContainerService.HintSize="550,827" sap2010:WorkflowViewState.IdRef="TryCatch_51">
                                                     <TryCatch.Try>
-                                                      <If Condition="[String.IsNullOrEmpty(CaseInformation(&quot;Personnummer (Elev)&quot;)) OrElse &#xD;&#xA;Not System.Text.RegularExpressions.Regex.IsMatch(CaseInformation(&quot;Personnummer (Elev)&quot;).Substring(0,6),&quot;[0-9]&quot;)]" DisplayName="If - Citizen ID is Protected" sap:VirtualizedContainerService.HintSize="220,25" sap2010:WorkflowViewState.IdRef="If_167">
+                                                      <If Condition="[Not System.Text.RegularExpressions.Regex.IsMatch(CaseInformation(&quot;Personnummer (Elev)&quot;).Substring(0,6),&quot;[0-9]&quot;)]" DisplayName="If - Citizen ID is Protected" sap:VirtualizedContainerService.HintSize="512,599" sap2010:WorkflowViewState.IdRef="If_167">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                         <If.Then>
-                                                          <Sequence sap:VirtualizedContainerService.HintSize="476,414" sap2010:WorkflowViewState.IdRef="Sequence_497">
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="476,411" sap2010:WorkflowViewState.IdRef="Sequence_497">
                                                             <Sequence.Variables>
                                                               <Variable x:TypeArguments="x:String" Name="FirstPart" />
                                                               <Variable x:TypeArguments="sd:DataTable" Name="dt_ProtectedStudents" />
@@ -4963,7 +4968,7 @@
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_302">
+                                                            <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_302">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:String">[CaseInformation("Kommentar")]</OutArgument>
                                                               </Assign.To>
@@ -4971,7 +4976,7 @@
                                                                 <InArgument x:TypeArguments="x:String">[CommentProtectedID]</InArgument>
                                                               </Assign.Value>
                                                             </Assign>
-                                                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_310">
+                                                            <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_311">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:String">[CaseInformation("Personnummer (Elev)")]</OutArgument>
                                                               </Assign.To>
@@ -4979,7 +4984,7 @@
                                                                 <InArgument x:TypeArguments="x:String">[CommentProtectedID]</InArgument>
                                                               </Assign.Value>
                                                             </Assign>
-                                                            <Assign DisplayName="Assign - ProtectedCitizenID" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_303">
+                                                            <Assign DisplayName="Assign - ProtectedCitizenID" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_303">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:Boolean">[ProtectedCitizenID]</OutArgument>
                                                               </Assign.To>
@@ -5001,7 +5006,7 @@
                                                       </If>
                                                     </TryCatch.Try>
                                                     <TryCatch.Catches>
-                                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_39">
+                                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="516,21" sap2010:WorkflowViewState.IdRef="Catch`1_39">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -5016,7 +5021,7 @@
                                                       </Catch>
                                                     </TryCatch.Catches>
                                                   </TryCatch>
-                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,25" sap2010:WorkflowViewState.IdRef="CommentOut_47">
+                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="550,25" sap2010:WorkflowViewState.IdRef="CommentOut_47">
                                                     <ui:CommentOut.Body>
                                                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="300,113" sap2010:WorkflowViewState.IdRef="Sequence_496">
                                                         <sap:WorkflowViewStateService.ViewState>
@@ -5112,9 +5117,9 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:CommentOut>
-                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,25" sap2010:WorkflowViewState.IdRef="CommentOut_48">
+                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="550,25" sap2010:WorkflowViewState.IdRef="CommentOut_48">
                                                     <ui:CommentOut.Body>
-                                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="592,113" sap2010:WorkflowViewState.IdRef="Sequence_500">
+                                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="303,113" sap2010:WorkflowViewState.IdRef="Sequence_500">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
