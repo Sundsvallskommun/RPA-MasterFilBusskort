@@ -206,7 +206,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="696,333" sap2010:WorkflowViewState.IdRef="Sequence_173">
+        <Sequence sap:VirtualizedContainerService.HintSize="757,333" sap2010:WorkflowViewState.IdRef="Sequence_173">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="TEMP" />
             <Variable x:TypeArguments="upr:ILocalResource" Name="TEMPFilePath" />
@@ -216,7 +216,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:PathExists Exists="{x:Null}" DisplayName="Path Exists - For Test" sap:VirtualizedContainerService.HintSize="654,115" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="C:\Users\jon27san\Downloads\Ansökan för Masterfil\Busskortsansökan för gymnasieelever - TEST RPA - 3939.xml" PathType="File" Resource="[TEMPFilePath]">
+          <ui:PathExists Exists="{x:Null}" DisplayName="Path Exists - For Test" sap:VirtualizedContainerService.HintSize="715,115" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="C:\Users\jon27san\Downloads\Ansökan för Masterfil\Busskortsansökan för gymnasieelever - TEST RPA - 3939.xml" PathType="File" Resource="[TEMPFilePath]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -224,7 +224,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:PathExists>
-          <ui:ReadTextFile FileName="{x:Null}" Content="[TEMP]" DisplayName="Read Text File - For Test" Encoding="iso-8859-1" File="[TEMPFilePath]" sap:VirtualizedContainerService.HintSize="654,25" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+          <ui:ReadTextFile FileName="{x:Null}" Content="[TEMP]" DisplayName="Read Text File - For Test" Encoding="iso-8859-1" File="[TEMPFilePath]" sap:VirtualizedContainerService.HintSize="715,25" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -232,7 +232,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ReadTextFile>
-          <ui:DeserializeXml DisplayName="Deserialize XML - For Test" sap:VirtualizedContainerService.HintSize="654,25" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[CaseXML]" XMLString="[TEMP]">
+          <ui:DeserializeXml DisplayName="Deserialize XML - For Test" sap:VirtualizedContainerService.HintSize="715,25" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[CaseXML]" XMLString="[TEMP]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -243,13 +243,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="492,1016" sap2010:WorkflowViewState.IdRef="Sequence_174">
+        <Sequence sap:VirtualizedContainerService.HintSize="492,486" sap2010:WorkflowViewState.IdRef="Sequence_174">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Get Case XML" sap:VirtualizedContainerService.HintSize="450,928" sap2010:WorkflowViewState.IdRef="Sequence_314">
+          <Sequence DisplayName="Get Case XML" sap:VirtualizedContainerService.HintSize="450,398" sap2010:WorkflowViewState.IdRef="Sequence_314">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="OePCredential" />
               <Variable x:TypeArguments="x:String" Name="OePURL" />
@@ -313,7 +313,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:RetryScope DisplayName="Retry Scope - Get Case XML or PDF" sap:VirtualizedContainerService.HintSize="388,555" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3">
+            <ui:RetryScope DisplayName="Retry Scope - Get Case XML or PDF" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="5" RetryInterval="00:01:00">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="326,380" sap2010:WorkflowViewState.IdRef="Sequence_170">
@@ -338,7 +338,7 @@
               </ui:RetryScope.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -3950,19 +3950,19 @@
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <TryCatch DisplayName="Try Catch - Period of Validity" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="TryCatch_18">
+          <TryCatch DisplayName="Try Catch - Period of Validity" sap:VirtualizedContainerService.HintSize="450,588" sap2010:WorkflowViewState.IdRef="TryCatch_18">
             <TryCatch.Variables>
               <Variable x:TypeArguments="x:String" Name="StudentPostedDate" />
               <Variable x:TypeArguments="x:String" Name="Key" />
             </TryCatch.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="First name" sap:VirtualizedContainerService.HintSize="476,602" sap2010:WorkflowViewState.IdRef="Sequence_116">
+              <Sequence DisplayName="First name" sap:VirtualizedContainerService.HintSize="476,601" sap2010:WorkflowViewState.IdRef="Sequence_116">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="Value" />
                   <Variable x:TypeArguments="x:String" Name="NodePath" />
@@ -3973,7 +3973,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign - Key" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_74">
+                <Assign DisplayName="Assign - Key" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_74">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[Key]</OutArgument>
                   </Assign.To>
@@ -3981,7 +3981,7 @@
                     <InArgument x:TypeArguments="x:String">Giltighetstid</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign DisplayName="Assign - Date application" sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="Assign_75">
+                <Assign DisplayName="Assign - Date application" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_75">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[PeriodOfValidity]</OutArgument>
                   </Assign.To>
@@ -3991,7 +3991,7 @@
 "")]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <InvokeMethod DisplayName="Invoke Method - Travel type" sap:VirtualizedContainerService.HintSize="434,135" sap2010:WorkflowViewState.IdRef="InvokeMethod_51" MethodName="Add">
+                <InvokeMethod DisplayName="Invoke Method - Travel type" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_51" MethodName="Add">
                   <InvokeMethod.TargetObject>
                     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[CaseInformation]</InArgument>
                   </InvokeMethod.TargetObject>
@@ -4002,10 +4002,10 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_16">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,425" sap2010:WorkflowViewState.IdRef="Catch`1_16">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -4013,14 +4013,14 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,352" sap2010:WorkflowViewState.IdRef="Sequence_117">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,356" sap2010:WorkflowViewState.IdRef="Sequence_117">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_48" Level="Warn" Message="[&quot;Could not add Period of Validity to dictionary, did not find first name in application.&quot;]" />
-                    <InvokeMethod DisplayName="Invoke Method - Travel type" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="InvokeMethod_52" MethodName="Add">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_48" Level="Warn" Message="[&quot;Could not add Period of Validity to dictionary&quot;]" />
+                    <InvokeMethod DisplayName="Invoke Method - Travel type" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_52" MethodName="Add">
                       <InvokeMethod.TargetObject>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[CaseInformation]</InArgument>
                       </InvokeMethod.TargetObject>
@@ -4585,7 +4585,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <av:Point x:Key="ShapeLocation">422.283333333334,501.54</av:Point>
                         <av:Size x:Key="ShapeSize">139,87</av:Size>
-                        <av:PointCollection x:Key="TrueConnector">422.283333333334,545.04 372.283333333334,545.04</av:PointCollection>
+                        <av:PointCollection x:Key="TrueConnector">422.283333333334,545.04 392.283333333334,545.04 392.283333333334,478.54 372.283333333334,478.54</av:PointCollection>
                         <av:PointCollection x:Key="FalseConnector">562.283333333334,545.04 594.5,545.04 594.5,1144.04 500,1144.04 500,1218.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -4593,18 +4593,19 @@
                       <FlowStep x:Name="__ReferenceID3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">172.283333333334,504.54</av:Point>
-                            <av:Size x:Key="ShapeSize">200,81</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">272.283333333334,585.54 272.283333333334,635.54</av:PointCollection>
+                            <av:Point x:Key="ShapeLocation">172.283333333334,364.54</av:Point>
+                            <av:Size x:Key="ShapeSize">200,228</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">272.283333333334,592.54 272.283333333334,635.54</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Get data from GUI" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_140">
+                        <Sequence sap2010:Annotation.AnnotationText="Hämta data från GUI:t görs bara för dom allra älsta ärendena, och görs således endast första gången processen körs och initialt gör första utkastet av Masterfilen. &#xD;&#xA;&#xD;&#xA;Alla nya ärenden hämtas all data direkt från XML:en." DisplayName="Get data from GUI" sap:VirtualizedContainerService.HintSize="200,228" sap2010:WorkflowViewState.IdRef="Sequence_140">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Boolean" Name="ErrorGettingCaseInfo" />
                           </Sequence.Variables>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="Info" Message="[&quot;Requierd data is missing, getting info from GUI. For case ID: &quot; + CaseID.ToString]" />
@@ -4670,7 +4671,7 @@
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">172.283333333334,737.54</av:Point>
                                     <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                    <av:PointCollection x:Key="ConnectorLocation">272.283333333334,790.54 272.283333333334,820.54 280,820.54 280,834</av:PointCollection>
+                                    <av:PointCollection x:Key="ConnectorLocation">272.283333333334,789.54 272.283333333334,819.54 280,819.54 280,834</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Data Manipulation\GUI data to XML dictionary.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Data Manipulation\GUI data to XML dictionary.xaml">
@@ -4691,7 +4692,7 @@
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">180,834</av:Point>
                                         <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">280,887 280,917 280.5,917 280.5,942.5</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">280,886 280,942.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check if something is missing.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Check if something is missing.xaml">
@@ -5285,7 +5286,7 @@
                                                         <av:PointCollection x:Key="ConnectorLocation">500,1439.5 500,1496.5</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence DisplayName="Check if case is valid" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_152">
+                                                    <Sequence DisplayName="Check if case is valid" sap:VirtualizedContainerService.HintSize="636,1786" sap2010:WorkflowViewState.IdRef="Sequence_152">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="s:String[]" Name="FilterApprovedCases" />
                                                         <Variable x:TypeArguments="x:Int32" Name="LimitOfHowOldSubmissionDate" />
@@ -5305,8 +5306,8 @@
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info" Message="[&quot;Decide if case can be closed or not&quot;]" />
-                                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="574,92" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info" Message="[&quot;Decide if case can be closed or not&quot;]" />
+                                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="574,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
                                                         <ui:MultipleAssign.AssignOperations>
                                                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                                                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_27">
@@ -5334,7 +5335,7 @@
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                       </ui:MultipleAssign>
-                                                      <ui:MultipleAssign DisplayName="Multiple Assign - Comments on Cases" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
+                                                      <ui:MultipleAssign DisplayName="Multiple Assign - Comments on Cases" sap:VirtualizedContainerService.HintSize="574,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
                                                         <ui:MultipleAssign.AssignOperations>
                                                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                                                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_63">
@@ -5394,7 +5395,7 @@
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                       </ui:MultipleAssign>
-                                                      <ui:MultipleAssign DisplayName="Multiple Assign - Valid, Not Valid" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_17">
+                                                      <ui:MultipleAssign DisplayName="Multiple Assign - Valid, Not Valid" sap:VirtualizedContainerService.HintSize="574,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_17">
                                                         <ui:MultipleAssign.AssignOperations>
                                                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_64">
@@ -5430,7 +5431,7 @@
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                       </ui:MultipleAssign>
-                                                      <Sequence DisplayName="Case May NOT Valid" sap:VirtualizedContainerService.HintSize="450,266" sap2010:WorkflowViewState.IdRef="Sequence_418">
+                                                      <Sequence DisplayName="Case May NOT Valid" sap:VirtualizedContainerService.HintSize="574,266" sap2010:WorkflowViewState.IdRef="Sequence_418">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5681,22 +5682,22 @@
                                                           </If.Else>
                                                         </If>
                                                       </Sequence>
-                                                      <If sap2010:Annotation.AnnotationText="Kollar inte om personr är Skyddat" Condition="[CaseIsNoLongerValidTooOld.Equals(False) AndAlso&#xA;CaseNoLongerValid.Equals(False) AndAlso&#xA;CaseIsNOTApprovedDecisionText.Equals(False) AndAlso&#xA;ProtectedCitizenID.Equals(False)]" DisplayName="If - Case seems ok" sap:VirtualizedContainerService.HintSize="450,69" sap2010:WorkflowViewState.IdRef="If_164">
+                                                      <If sap2010:Annotation.AnnotationText="Kollar inte om personr är Skyddat" Condition="[CaseIsNoLongerValidTooOld.Equals(False) AndAlso&#xA;CaseNoLongerValid.Equals(False) AndAlso&#xA;CaseIsNOTApprovedDecisionText.Equals(False) AndAlso&#xA;ProtectedCitizenID.Equals(False)]" DisplayName="If - Case seems ok" sap:VirtualizedContainerService.HintSize="574,1042" sap2010:WorkflowViewState.IdRef="If_164">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                         <If.Then>
-                                                          <Sequence sap:VirtualizedContainerService.HintSize="492,168" sap2010:WorkflowViewState.IdRef="Sequence_477">
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="538,821" sap2010:WorkflowViewState.IdRef="Sequence_477">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="Check if Newer Case Exsists with Approved Status or To Be status" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="Sequence_436">
+                                                            <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="496,733" sap2010:WorkflowViewState.IdRef="Sequence_436">
                                                               <Sequence.Variables>
                                                                 <Variable x:TypeArguments="x:String" Name="ColumnAndKeyNameForStudentSSN" />
                                                                 <Variable x:TypeArguments="x:String" Name="ColumnAndKeyNameForVHSSN" />
@@ -5711,7 +5712,7 @@
                                                               </Sequence.Variables>
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
@@ -5779,7 +5780,7 @@
                                                                         <OutArgument x:TypeArguments="x:String">[StudentAdress]</OutArgument>
                                                                       </ui:AssignOperation.To>
                                                                       <ui:AssignOperation.Value>
-                                                                        <InArgument x:TypeArguments="x:String">[if(Växelvisadress, CaseInformation("Växelvis Gatuadress").ToString ,CaseInformation("Primär Gatuadress").ToString)]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String">[if(Växelvisadress, CaseInformation("Växelvis Gatuadress").ToString, if(NewAdress, CaseInformation("Ny Gatuadress").ToString, CaseInformation("Primär Gatuadress").ToString))]</InArgument>
                                                                       </ui:AssignOperation.Value>
                                                                     </ui:AssignOperation>
                                                                   </scg:List>
@@ -5791,7 +5792,7 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:MultipleAssign>
-                                                              <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtrerar fram de ärenden som är nyare och på samma person" DataTable="[dt_MasterFile]" DisplayName="Filter Data Table - dt_FilterOnlyApproved" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,69" sap2010:WorkflowViewState.IdRef="FilterDataTable_19" OutputDataTable="[dt_FilterOnlyApproved]" SelectColumnsMode="Remove">
+                                                              <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtrerar fram de ärenden som är nyare och på samma person" DataTable="[dt_MasterFile]" DisplayName="Filter Data Table - dt_FilterOnlyApproved" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,67" sap2010:WorkflowViewState.IdRef="FilterDataTable_19" OutputDataTable="[dt_FilterOnlyApproved]" SelectColumnsMode="Remove">
                                                                 <ui:FilterDataTable.Filters>
                                                                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                                                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -5817,7 +5818,7 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:FilterDataTable>
-                                                              <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtrerar fram det ärenden som är beviljad eller ska bli beviljad." DataTable="[dt_FilterOnlyApproved]" DisplayName="Filter Data Table - dt_FilterOnlyApproved" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,69" sap2010:WorkflowViewState.IdRef="FilterDataTable_20" OutputDataTable="[dt_FilterOnlyApproved]" SelectColumnsMode="Remove">
+                                                              <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtrerar fram det ärenden som är beviljad eller ska bli beviljad." DataTable="[dt_FilterOnlyApproved]" DisplayName="Filter Data Table - dt_FilterOnlyApproved" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,67" sap2010:WorkflowViewState.IdRef="FilterDataTable_20" OutputDataTable="[dt_FilterOnlyApproved]" SelectColumnsMode="Remove">
                                                                 <ui:FilterDataTable.Filters>
                                                                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                                                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -5851,7 +5852,7 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:FilterDataTable>
-                                                              <Assign DisplayName="Assign - Filter on PostDate" sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="Assign_275">
+                                                              <Assign DisplayName="Assign - Filter on PostDate" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_275">
                                                                 <Assign.To>
                                                                   <OutArgument x:TypeArguments="sd:DataTable">[dt_FilterOnlyApproved]</OutArgument>
                                                                 </Assign.To>
@@ -5974,7 +5975,7 @@
                                                                   </Sequence>
                                                                 </If.Else>
                                                               </If>
-                                                              <If Condition="[NewOrVäxelvisAdressButStudentAndParentAlreadyExsistInFile.Equals(False)]" DisplayName="If - Not Student + adress already exsist in file" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="If_151">
+                                                              <If Condition="[NewOrVäxelvisAdressButStudentAndParentAlreadyExsistInFile.Equals(False)]" DisplayName="If - Student + adress already exsist in file" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="If_151">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
