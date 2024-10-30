@@ -112,6 +112,7 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1066,3062" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -6289,574 +6290,13 @@
                                                                     <av:PointCollection x:Key="ConnectorLocation">220,1889.5 220,1919.5 510,1919.5 510,2183.5</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <Sequence DisplayName="Case Undecided" sap:VirtualizedContainerService.HintSize="637,712" sap2010:WorkflowViewState.IdRef="Sequence_467">
+                                                                <Sequence DisplayName="Case Undecided" sap:VirtualizedContainerService.HintSize="640,910" sap2010:WorkflowViewState.IdRef="Sequence_467">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="575,25" sap2010:WorkflowViewState.IdRef="CommentOut_44">
-                                                                    <ui:CommentOut.Body>
-                                                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="492,168" sap2010:WorkflowViewState.IdRef="Sequence_466">
-                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                          </scg:Dictionary>
-                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                        <Sequence DisplayName="Check if Older Case Should be Updated" sap:VirtualizedContainerService.HintSize="450,80" sap2010:WorkflowViewState.IdRef="Sequence_453">
-                                                                          <Sequence.Variables>
-                                                                            <Variable x:TypeArguments="x:String" Name="ColumnAndKeyNameForStudentSSN" />
-                                                                            <Variable x:TypeArguments="x:String" Name="ColumnAndKeyNameForVHSSN" />
-                                                                            <Variable x:TypeArguments="x:String" Name="ColumnAndKeyNameForHomeAdress" />
-                                                                            <Variable x:TypeArguments="x:String" Name="ColumnAndKeyNameForVäxelvisAdress" />
-                                                                            <Variable x:TypeArguments="x:String" Name="ColumnAndKeyNameForNewAdress" />
-                                                                            <Variable x:TypeArguments="x:String" Name="ColumnAndKeyNameForPostedDate" />
-                                                                            <Variable x:TypeArguments="s:DateTime" Name="PostedDate" />
-                                                                            <Variable x:TypeArguments="sd:DataTable" Name="dt_FilterOnlyApproved" />
-                                                                            <Variable x:TypeArguments="x:String" Name="VHCitizenID" />
-                                                                            <Variable x:TypeArguments="x:String" Name="CommentNewOrVäxelvis" />
-                                                                            <Variable x:TypeArguments="x:String" Name="CommentStudentAndHome" />
-                                                                            <Variable x:TypeArguments="x:String" Name="CommentStudentAppearsTwoTimes" />
-                                                                            <Variable x:TypeArguments="x:String" Name="CaseNotValidStatusInExcel" />
-                                                                            <Variable x:TypeArguments="x:String" Name="StudentAdress" />
-                                                                            <Variable x:TypeArguments="x:Int32" Name="RowIndex" />
-                                                                          </Sequence.Variables>
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_20">
-                                                                            <ui:MultipleAssign.AssignOperations>
-                                                                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_93">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[ColumnAndKeyNameForStudentSSN]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">Personnummer (Elev)</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_94">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[ColumnAndKeyNameForVHSSN]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">Personnummer (VH)</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_95">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[ColumnAndKeyNameForHomeAdress]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">Primär Gatuadress</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_96">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[ColumnAndKeyNameForVäxelvisAdress]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">Växelvis Gatuadress</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_97">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[ColumnAndKeyNameForNewAdress]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">Ny Gatuadress</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_98">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[ColumnAndKeyNameForPostedDate]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">Datum ansökan</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_99">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="s:DateTime">[PostedDate]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse(CaseInformation(ColumnAndKeyNameForPostedDate))]</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_100">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[VHCitizenID]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">[CaseInformation("Personnummer (VH)").ToString]</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_101">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[CommentNewOrVäxelvis]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("NewOrVäxelvisAdress").ToString]</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_102">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[CommentStudentAndHome]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("StudentAndHomeAdressAlreadyExsistInFile").ToString]</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_103">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[CommentStudentAppearsTwoTimes]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("StudentAppearsTwoTimes").ToString]</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_104">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[CaseNotValidStatusInExcel]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("CaseNotValid").ToString]</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_105">
-                                                                                  <ui:AssignOperation.To>
-                                                                                    <OutArgument x:TypeArguments="x:String">[StudentAdress]</OutArgument>
-                                                                                  </ui:AssignOperation.To>
-                                                                                  <ui:AssignOperation.Value>
-                                                                                    <InArgument x:TypeArguments="x:String">[if(Växelvisadress, CaseInformation("Växelvis Gatuadress").ToString ,CaseInformation("Primär Gatuadress").ToString)]</InArgument>
-                                                                                  </ui:AssignOperation.Value>
-                                                                                </ui:AssignOperation>
-                                                                              </scg:List>
-                                                                            </ui:MultipleAssign.AssignOperations>
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                          </ui:MultipleAssign>
-                                                                          <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtrerar bara fram de ärenden som är giltiga och äldre för att veta att det ärende som processas nu är det nyaste." DataTable="[dt_MasterFile]" DisplayName="Filter Data Table - dt_FilterOnlyApproved" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="388,85" sap2010:WorkflowViewState.IdRef="FilterDataTable_23" OutputDataTable="[dt_FilterOnlyApproved]" SelectColumnsMode="Remove">
-                                                                            <ui:FilterDataTable.Filters>
-                                                                              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                                                                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                                                                                  <ui:FilterOperationArgument.Column>
-                                                                                    <InArgument x:TypeArguments="x:String">["Ärende giltigt"]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Column>
-                                                                                  <ui:FilterOperationArgument.Operand>
-                                                                                    <InArgument x:TypeArguments="x:String">["Ja"]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Operand>
-                                                                                </ui:FilterOperationArgument>
-                                                                                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                                                                                  <ui:FilterOperationArgument.Column>
-                                                                                    <InArgument x:TypeArguments="x:String">[ColumnAndKeyNameForStudentSSN]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Column>
-                                                                                  <ui:FilterOperationArgument.Operand>
-                                                                                    <InArgument x:TypeArguments="x:String">[StudentCitizenID]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Operand>
-                                                                                </ui:FilterOperationArgument>
-                                                                                <ui:FilterOperationArgument BooleanOperator="And" Operator="GT">
-                                                                                  <ui:FilterOperationArgument.Column>
-                                                                                    <InArgument x:TypeArguments="x:String">[ColumnAndKeyNameForPostedDate]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Column>
-                                                                                  <ui:FilterOperationArgument.Operand>
-                                                                                    <InArgument x:TypeArguments="s:DateTime">[PostedDate]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Operand>
-                                                                                </ui:FilterOperationArgument>
-                                                                              </scg:List>
-                                                                            </ui:FilterDataTable.Filters>
-                                                                            <ui:FilterDataTable.SelectColumns>
-                                                                              <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                                                                <x:Null />
-                                                                              </scg:List>
-                                                                            </ui:FilterDataTable.SelectColumns>
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                          </ui:FilterDataTable>
-                                                                          <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtrerar bara fram de ärenden som är giltiga och äldre för att veta att det ärende som processas nu är det nyaste." DataTable="[dt_FilterOnlyApproved]" DisplayName="Filter Data Table - dt_FilterOnlyApproved" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="388,85" sap2010:WorkflowViewState.IdRef="FilterDataTable_24" OutputDataTable="[dt_FilterOnlyApproved]" SelectColumnsMode="Remove">
-                                                                            <ui:FilterDataTable.Filters>
-                                                                              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                                                                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                                                                                  <ui:FilterOperationArgument.Column>
-                                                                                    <InArgument x:TypeArguments="x:String">["Ärende giltigt"]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Column>
-                                                                                  <ui:FilterOperationArgument.Operand>
-                                                                                    <InArgument x:TypeArguments="x:String">["Ja"]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Operand>
-                                                                                </ui:FilterOperationArgument>
-                                                                                <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
-                                                                                  <ui:FilterOperationArgument.Column>
-                                                                                    <InArgument x:TypeArguments="x:String">["Ärende giltigt"]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Column>
-                                                                                  <ui:FilterOperationArgument.Operand>
-                                                                                    <InArgument x:TypeArguments="x:String">["Kommande"]</InArgument>
-                                                                                  </ui:FilterOperationArgument.Operand>
-                                                                                </ui:FilterOperationArgument>
-                                                                              </scg:List>
-                                                                            </ui:FilterDataTable.Filters>
-                                                                            <ui:FilterDataTable.SelectColumns>
-                                                                              <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                                                                <x:Null />
-                                                                              </scg:List>
-                                                                            </ui:FilterDataTable.SelectColumns>
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                          </ui:FilterDataTable>
-                                                                          <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Datum ansökan" DataTable="[dt_FilterOnlyApproved]" DisplayName="Sort Data Table - Oldest first" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="SortDataTable_5" Order="Decending" OutputDataTable="[dt_FilterOnlyApproved]" SortOrder="Descending">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                          </ui:SortDataTable>
-                                                                          <If Condition="[NewAdress OrElse Växelvisadress]" DisplayName="If - NewAdress OrElse Växelvisadress" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="If_156">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <If.Then>
-                                                                              <Sequence sap:VirtualizedContainerService.HintSize="341,178" sap2010:WorkflowViewState.IdRef="Sequence_454">
-                                                                                <Sequence.Variables>
-                                                                                  <Variable x:TypeArguments="sd:DataTable" Name="dt_StudentAndVH" />
-                                                                                </Sequence.Variables>
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:FilterDataTable DataTable="[dt_FilterOnlyApproved]" DisplayName="Filter Data Table - dt_StudentAndVH" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="299,25" sap2010:WorkflowViewState.IdRef="FilterDataTable_25" OutputDataTable="[dt_StudentAndVH]" SelectColumnsMode="Remove">
-                                                                                  <ui:FilterDataTable.Filters>
-                                                                                    <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                                                                      <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-                                                                                        <ui:FilterOperationArgument.Column>
-                                                                                          <InArgument x:TypeArguments="x:String">[ColumnAndKeyNameForVHSSN]</InArgument>
-                                                                                        </ui:FilterOperationArgument.Column>
-                                                                                        <ui:FilterOperationArgument.Operand>
-                                                                                          <InArgument x:TypeArguments="x:String">[VHCitizenID]</InArgument>
-                                                                                        </ui:FilterOperationArgument.Operand>
-                                                                                      </ui:FilterOperationArgument>
-                                                                                    </scg:List>
-                                                                                  </ui:FilterDataTable.Filters>
-                                                                                  <ui:FilterDataTable.SelectColumns>
-                                                                                    <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                                                                      <x:Null />
-                                                                                    </scg:List>
-                                                                                  </ui:FilterDataTable.SelectColumns>
-                                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                    </scg:Dictionary>
-                                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                                </ui:FilterDataTable>
-                                                                                <If Condition="[dt_StudentAndVH.RowCount &gt; 0]" DisplayName="If - StudentAndParentAlreadyExsistInFile" sap:VirtualizedContainerService.HintSize="299,25" sap2010:WorkflowViewState.IdRef="If_155">
-                                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                    </scg:Dictionary>
-                                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                                  <If.Then>
-                                                                                    <Sequence sap:VirtualizedContainerService.HintSize="476,554" sap2010:WorkflowViewState.IdRef="Sequence_456">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_109" Level="Info" Message="[&quot;Same student and parent already exsists, updating the old case to not valid and adding the new case.&quot;]" />
-                                                                                      <Assign DisplayName="Assign - RowIndex" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_259">
-                                                                                        <Assign.To>
-                                                                                          <OutArgument x:TypeArguments="x:Int32">[RowIndex]</OutArgument>
-                                                                                        </Assign.To>
-                                                                                        <Assign.Value>
-                                                                                          <InArgument x:TypeArguments="x:Int32">[dt_MasterFile.AsEnumerable().ToList().FindIndex(Function(row) Enumerable.SequenceEqual(row.ItemArray, dt_StudentAndVH(0).ItemArray))]</InArgument>
-                                                                                        </Assign.Value>
-                                                                                      </Assign>
-                                                                                      <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Ärende giltigt" DisplayName="Update Row Item - No longer valid" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="UpdateRowItem_19" Row="[dt_MasterFile.Rows(RowIndex)]" Value="[CaseNotValidStatusInExcel]">
-                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                          </scg:Dictionary>
-                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                      </ui:UpdateRowItem>
-                                                                                      <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Kommentar" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="UpdateRowItem_20" Row="[dt_MasterFile.Rows(RowIndex)]" Value="[CommentNewOrVäxelvis]">
-                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                          </scg:Dictionary>
-                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                      </ui:UpdateRowItem>
-                                                                                      <Assign DisplayName="Assign - StudentAndParentAlreadyExsistInFile" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_260">
-                                                                                        <Assign.To>
-                                                                                          <OutArgument x:TypeArguments="x:Boolean">[NewOrVäxelvisAdressButStudentAndParentAlreadyExsistInFile]</OutArgument>
-                                                                                        </Assign.To>
-                                                                                        <Assign.Value>
-                                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                                        </Assign.Value>
-                                                                                      </Assign>
-                                                                                    </Sequence>
-                                                                                  </If.Then>
-                                                                                  <If.Else>
-                                                                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_457">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                    </Sequence>
-                                                                                  </If.Else>
-                                                                                </If>
-                                                                              </Sequence>
-                                                                            </If.Then>
-                                                                            <If.Else>
-                                                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_458">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                              </Sequence>
-                                                                            </If.Else>
-                                                                          </If>
-                                                                          <If Condition="[NewOrVäxelvisAdressButStudentAndParentAlreadyExsistInFile.Equals(False)]" DisplayName="If - Not Student + adress already exsist in file" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="If_158">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <If.Then>
-                                                                              <Sequence sap:VirtualizedContainerService.HintSize="374,178" sap2010:WorkflowViewState.IdRef="Sequence_455">
-                                                                                <Sequence.Variables>
-                                                                                  <Variable x:TypeArguments="sd:DataTable" Name="dt_SameStudentAndHomeAdress" />
-                                                                                </Sequence.Variables>
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:FilterDataTable DataTable="[dt_FilterOnlyApproved]" DisplayName="Filter Data Table - SameStudentAndHomeAdress" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="332,25" sap2010:WorkflowViewState.IdRef="FilterDataTable_26" OutputDataTable="[dt_SameStudentAndHomeAdress]" SelectColumnsMode="Remove">
-                                                                                  <ui:FilterDataTable.Filters>
-                                                                                    <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                                                                      <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-                                                                                        <ui:FilterOperationArgument.Column>
-                                                                                          <InArgument x:TypeArguments="x:String">[ColumnAndKeyNameForHomeAdress]</InArgument>
-                                                                                        </ui:FilterOperationArgument.Column>
-                                                                                        <ui:FilterOperationArgument.Operand>
-                                                                                          <InArgument x:TypeArguments="x:String">[StudentAdress]</InArgument>
-                                                                                        </ui:FilterOperationArgument.Operand>
-                                                                                      </ui:FilterOperationArgument>
-                                                                                      <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
-                                                                                        <ui:FilterOperationArgument.Column>
-                                                                                          <InArgument x:TypeArguments="x:String">[ColumnAndKeyNameForVäxelvisAdress]</InArgument>
-                                                                                        </ui:FilterOperationArgument.Column>
-                                                                                        <ui:FilterOperationArgument.Operand>
-                                                                                          <InArgument x:TypeArguments="x:String">[StudentAdress]</InArgument>
-                                                                                        </ui:FilterOperationArgument.Operand>
-                                                                                      </ui:FilterOperationArgument>
-                                                                                      <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
-                                                                                        <ui:FilterOperationArgument.Column>
-                                                                                          <InArgument x:TypeArguments="x:String">[ColumnAndKeyNameForNewAdress]</InArgument>
-                                                                                        </ui:FilterOperationArgument.Column>
-                                                                                        <ui:FilterOperationArgument.Operand>
-                                                                                          <InArgument x:TypeArguments="x:String">[StudentAdress]</InArgument>
-                                                                                        </ui:FilterOperationArgument.Operand>
-                                                                                      </ui:FilterOperationArgument>
-                                                                                    </scg:List>
-                                                                                  </ui:FilterDataTable.Filters>
-                                                                                  <ui:FilterDataTable.SelectColumns>
-                                                                                    <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                                                                      <x:Null />
-                                                                                    </scg:List>
-                                                                                  </ui:FilterDataTable.SelectColumns>
-                                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                    </scg:Dictionary>
-                                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                                </ui:FilterDataTable>
-                                                                                <If Condition="[dt_SameStudentAndHomeAdress.RowCount &gt; 0]" DisplayName="If - Same student and homeadress exsists" sap:VirtualizedContainerService.HintSize="332,25" sap2010:WorkflowViewState.IdRef="If_157">
-                                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                    </scg:Dictionary>
-                                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                                  <If.Then>
-                                                                                    <Sequence sap:VirtualizedContainerService.HintSize="476,554" sap2010:WorkflowViewState.IdRef="Sequence_459">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_110" Level="Info" Message="[&quot;Same student and addres already exsists, updating the old case to not valid and adding the new case.&quot;]" />
-                                                                                      <Assign DisplayName="Assign - RowIndex" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_261">
-                                                                                        <Assign.To>
-                                                                                          <OutArgument x:TypeArguments="x:Int32">[RowIndex]</OutArgument>
-                                                                                        </Assign.To>
-                                                                                        <Assign.Value>
-                                                                                          <InArgument x:TypeArguments="x:Int32">[dt_MasterFile.AsEnumerable().ToList().FindIndex(Function(row) Enumerable.SequenceEqual(row.ItemArray, dt_SameStudentAndHomeAdress(0).ItemArray))]</InArgument>
-                                                                                        </Assign.Value>
-                                                                                      </Assign>
-                                                                                      <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Ärende giltigt" DisplayName="Update Row Item - No longer valid" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="UpdateRowItem_21" Row="[dt_MasterFile.Rows(RowIndex)]" Value="[CaseNotValidStatusInExcel]">
-                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                          </scg:Dictionary>
-                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                      </ui:UpdateRowItem>
-                                                                                      <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Kommentar" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="UpdateRowItem_22" Row="[dt_MasterFile.Rows(RowIndex)]" Value="[CommentStudentAndHome]">
-                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                          </scg:Dictionary>
-                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                      </ui:UpdateRowItem>
-                                                                                      <Assign DisplayName="Assign - StudentAndHomeAdressAlreadyExsistInFile" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_262">
-                                                                                        <Assign.To>
-                                                                                          <OutArgument x:TypeArguments="x:Boolean">[StudentAndHomeAdressAlreadyExsistInFile]</OutArgument>
-                                                                                        </Assign.To>
-                                                                                        <Assign.Value>
-                                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                                        </Assign.Value>
-                                                                                      </Assign>
-                                                                                    </Sequence>
-                                                                                  </If.Then>
-                                                                                  <If.Else>
-                                                                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_460">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                    </Sequence>
-                                                                                  </If.Else>
-                                                                                </If>
-                                                                              </Sequence>
-                                                                            </If.Then>
-                                                                            <If.Else>
-                                                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_461">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                              </Sequence>
-                                                                            </If.Else>
-                                                                          </If>
-                                                                          <If Condition="[NewOrVäxelvisAdressButStudentAndParentAlreadyExsistInFile.Equals(False) AndAlso &#xA;StudentAndHomeAdressAlreadyExsistInFile.Equals(False)]" DisplayName="If - Two Newer cases exsist in file" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="If_160">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <If.Then>
-                                                                              <Sequence sap:VirtualizedContainerService.HintSize="347,113" sap2010:WorkflowViewState.IdRef="Sequence_464">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <If Condition="[dt_FilterOnlyApproved.RowCount &gt;= 2]" DisplayName="If - Student exsist 2 or more times already" sap:VirtualizedContainerService.HintSize="305,25" sap2010:WorkflowViewState.IdRef="If_159">
-                                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                    </scg:Dictionary>
-                                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                                  <If.Then>
-                                                                                    <Sequence sap:VirtualizedContainerService.HintSize="476,432" sap2010:WorkflowViewState.IdRef="Sequence_462">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_111" Level="Info" Message="[&quot;Student exsist 2 or more times already, updating the old case to not valid and adding the new case.&quot;]" />
-                                                                                      <Assign DisplayName="Assign - RowIndex" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_263">
-                                                                                        <Assign.To>
-                                                                                          <OutArgument x:TypeArguments="x:Int32">[RowIndex]</OutArgument>
-                                                                                        </Assign.To>
-                                                                                        <Assign.Value>
-                                                                                          <InArgument x:TypeArguments="x:Int32">[dt_MasterFile.AsEnumerable().ToList().FindIndex(Function(row) Enumerable.SequenceEqual(row.ItemArray, dt_FilterOnlyApproved(0).ItemArray))]</InArgument>
-                                                                                        </Assign.Value>
-                                                                                      </Assign>
-                                                                                      <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Ärende giltigt" DisplayName="Update Row Item - No longer valid" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="UpdateRowItem_23" Row="[dt_MasterFile.Rows(RowIndex)]" Value="[CaseNotValidStatusInExcel]">
-                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                          </scg:Dictionary>
-                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                      </ui:UpdateRowItem>
-                                                                                      <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Kommentar" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="UpdateRowItem_24" Row="[dt_MasterFile.Rows(RowIndex)]" Value="[CommentStudentAppearsTwoTimes]">
-                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                          </scg:Dictionary>
-                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                      </ui:UpdateRowItem>
-                                                                                    </Sequence>
-                                                                                  </If.Then>
-                                                                                  <If.Else>
-                                                                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_463">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                    </Sequence>
-                                                                                  </If.Else>
-                                                                                </If>
-                                                                              </Sequence>
-                                                                            </If.Then>
-                                                                            <If.Else>
-                                                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_465">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                              </Sequence>
-                                                                            </If.Else>
-                                                                          </If>
-                                                                        </Sequence>
-                                                                      </Sequence>
-                                                                    </ui:CommentOut.Body>
-                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                      </scg:Dictionary>
-                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                  </ui:CommentOut>
-                                                                  <Assign sap:VirtualizedContainerService.HintSize="575,82" sap2010:WorkflowViewState.IdRef="Assign_264">
+                                                                  <Assign sap:VirtualizedContainerService.HintSize="578,82" sap2010:WorkflowViewState.IdRef="Assign_264">
                                                                     <Assign.To>
                                                                       <OutArgument x:TypeArguments="x:String">[CaseInformation("Ärende giltigt")]</OutArgument>
                                                                     </Assign.To>
@@ -6864,31 +6304,51 @@
                                                                       <InArgument x:TypeArguments="x:String">[CaseMayNotBeValidStatusInExcel]</InArgument>
                                                                     </Assign.Value>
                                                                   </Assign>
-                                                                  <Sequence DisplayName="Send mail to Verksamhet" sap:VirtualizedContainerService.HintSize="575,414" sap2010:WorkflowViewState.IdRef="Sequence_510">
+                                                                  <Sequence DisplayName="Send mail to Verksamhet" sap:VirtualizedContainerService.HintSize="578,677" sap2010:WorkflowViewState.IdRef="Sequence_510">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <If Condition="[CaseInformation(&quot;Besked&quot;).Equals(NoDataFound) OrElse &#xA;CaseInformation(&quot;Besked&quot;).ToString.ToLower.Contains(&quot;busskort&quot;)]" DisplayName="If - Only send mail if Reskort is given or Type of transportation is missing Or protected ID" sap:VirtualizedContainerService.HintSize="513,303" sap2010:WorkflowViewState.IdRef="If_171">
+                                                                    <If Condition="[CaseInformation(&quot;Besked&quot;).Equals(NoDataFound) OrElse &#xA;CaseInformation(&quot;Besked&quot;).ToString.ToLower.Contains(&quot;busskort&quot;)]" DisplayName="If - Only send mail if Reskort is given or Type of transportation is missing Or protected ID" sap:VirtualizedContainerService.HintSize="516,566" sap2010:WorkflowViewState.IdRef="If_171">
                                                                       <If.Then>
-                                                                        <Sequence sap:VirtualizedContainerService.HintSize="300,113" sap2010:WorkflowViewState.IdRef="Sequence_508">
+                                                                        <Sequence sap:VirtualizedContainerService.HintSize="480,376" sap2010:WorkflowViewState.IdRef="Sequence_508">
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Hej! &lt;br&gt;&quot; +&#xA;&quot;Reskort har tilldelads ärende: &quot; + CaseID.ToString + &quot; men infomration saknas i ärendet. &lt;br&gt;&lt;br&gt;&quot; +&#xA;&quot;Vänligen åtgärda detta genom att fylla i den saknade infromationen i e-tjänstärendet, samt ta bort tillhörande rad i Masterfilen för Grundskola.&lt;br&gt;&quot; +&#xA;&quot;Tills att detta görs så kommer inte ärendet med i filen som skickas till Skolportalen &lt;br&gt;&lt;br&gt;&quot; +&#xA;&quot;Sökvägen till Masterfilen är: &quot; + in_Config(&quot;ExcelFilePath&quot;).ToString + &quot;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&quot; +&#xA;&quot;Vänliga hälsningar, &lt;br&gt;&quot; +&#xA;&quot;Roboten som sammaställer Masterfilen för Gymnasium.&quot;]" DisplayName="Send SMTP Mail Message" EnableSSL="True" sap:VirtualizedContainerService.HintSize="258,25" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="False" Port="25" SecureConnection="Auto" Server="mailrelay.sundsvall.se" Subject="[in_Config(&quot;SubjectMail&quot;).ToString.Replace(&quot;[CaseID]&quot;, CaseID.ToString)]" To="[in_Config(&quot;EmailAdress_To_Verksamhet&quot;).ToString]">
-                                                                            <ui:SendMail.Files>
-                                                                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                                                            </ui:SendMail.Files>
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                          </ui:SendMail>
+                                                                          <TryCatch DisplayName="Try Catch - Send SMTP Mail Message" sap:VirtualizedContainerService.HintSize="438,288" sap2010:WorkflowViewState.IdRef="TryCatch_52">
+                                                                            <TryCatch.Try>
+                                                                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Hej! &lt;br&gt;&quot; +&#xA;&quot;Reskort har tilldelads ärende: &quot; + CaseID.ToString + &quot; men infomration saknas i ärendet. &lt;br&gt;&lt;br&gt;&quot; +&#xA;&quot;Vänligen åtgärda detta genom att fylla i den saknade infromationen i e-tjänstärendet, samt ta bort tillhörande rad i Masterfilen för Grundskola.&lt;br&gt;&quot; +&#xA;&quot;Tills att detta görs så kommer inte ärendet med i filen som skickas till Skolportalen &lt;br&gt;&lt;br&gt;&quot; +&#xA;&quot;Sökvägen till Masterfilen är: &quot; + in_Config(&quot;ExcelFilePath&quot;).ToString + &quot;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&quot; +&#xA;&quot;Vänliga hälsningar, &lt;br&gt;&quot; +&#xA;&quot;Roboten som sammaställer Masterfilen för Gymnasium.&quot;]" DisplayName="Send SMTP Mail Message" EnableSSL="True" sap:VirtualizedContainerService.HintSize="221,25" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="False" Port="25" SecureConnection="Auto" Server="mailrelay.sundsvall.se" Subject="[in_Config(&quot;SubjectMail&quot;).ToString.Replace(&quot;[CaseID]&quot;, CaseID.ToString)]" To="[in_Config(&quot;EmailAdress_To_Verksamhet&quot;).ToString]">
+                                                                                <ui:SendMail.Files>
+                                                                                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                                                </ui:SendMail.Files>
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                              </ui:SendMail>
+                                                                            </TryCatch.Try>
+                                                                            <TryCatch.Catches>
+                                                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_40">
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                <ActivityAction x:TypeArguments="s:Exception">
+                                                                                  <ActivityAction.Argument>
+                                                                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                                                  </ActivityAction.Argument>
+                                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_113" Level="Warn" Message="[&quot;Gick inte att skicka mail om att det saknas nödvändig infomration för ärende: &quot; + CaseID.ToString]" />
+                                                                                </ActivityAction>
+                                                                              </Catch>
+                                                                            </TryCatch.Catches>
+                                                                          </TryCatch>
                                                                         </Sequence>
                                                                       </If.Then>
                                                                       <If.Else>
