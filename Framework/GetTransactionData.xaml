@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1713,1436</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1783,1436</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,6 +114,7 @@
       <AssemblyReference>UiPath.Web</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Get a transaction item from a specified source (e.g., Orchestrator queues, spreadsheets, databases, mailboxes or web APIs). &#xA;&#xA;If there are no transaction items remaining, out_TransactionItem is set to Nothing, which leads to the End Process state. &#xA;&#xA;For cases in which there is only a single transaction (i.e., a linear process), use an If activity to check whether the argument in_TransactionNumber has the value 1 (meaning it is the first and only transaction) and assign the transaction item to out_TransactionItem. For any other value of in_TransactionNumber, out_TransactionItem should be set to Nothing.&#xA;&#xA;If there are multiple transactions, use the argument in_TransactionNumber as an index to retrieve the correct transaction to be processed. If there are no more transactions left, it is necessary to set out_TransactionItem to Nothing, thus ending the process." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="960,1371" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -246,7 +247,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">520,400.5 520,430.5 513.641666666667,430.5 513.641666666667,448.54</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Change no longer valid cases in file" sap:VirtualizedContainerService.HintSize="512,1364" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                <Sequence DisplayName="Change no longer valid cases in file" sap:VirtualizedContainerService.HintSize="712,2182" sap2010:WorkflowViewState.IdRef="Sequence_110">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="MasterFile" />
                     <Variable x:TypeArguments="sd:DataTable" Name="dt_OnlyValidCases" />
@@ -266,8 +267,8 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Check if cases is no longer valid&quot;]" />
-                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="650,92" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Check if cases is no longer valid&quot;]" />
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="650,25" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
@@ -351,7 +352,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:MultipleAssign>
-                  <ui:ReadRange AddHeaders="True" DataTable="[dt_MasterFile]" DisplayName="Read Range Workbook - Masterfile - dt_MasterFile" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="ReadRange_2" PreserveFormat="True" SheetName="Blad1" WorkbookPath="[MasterFile]">
+                  <ui:ReadRange AddHeaders="True" DataTable="[dt_MasterFile]" DisplayName="Read Range Workbook - Masterfile - dt_MasterFile" sap:VirtualizedContainerService.HintSize="650,25" sap2010:WorkflowViewState.IdRef="ReadRange_2" PreserveFormat="True" SheetName="Blad1" WorkbookPath="[MasterFile]">
                     <ui:ReadRange.Range>
                       <InArgument x:TypeArguments="x:String">
                         <Literal x:TypeArguments="x:String" Value="" />
@@ -364,7 +365,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ReadRange>
-                  <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Datum ansökan" DataTable="[dt_MasterFile]" DisplayName="Sort Data Table - Newest First" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="SortDataTable_9" Order="Decending" OutputDataTable="[dt_MasterFile]" SortOrder="Descending">
+                  <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Datum ansökan" DataTable="[dt_MasterFile]" DisplayName="Sort Data Table - Newest First" sap:VirtualizedContainerService.HintSize="650,25" sap2010:WorkflowViewState.IdRef="SortDataTable_9" Order="Decending" OutputDataTable="[dt_MasterFile]" SortOrder="Descending">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -372,7 +373,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:SortDataTable>
-                  <Sequence DisplayName="Updating Case that is No longer valid" sap:VirtualizedContainerService.HintSize="450,288" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                  <Sequence DisplayName="Updating Case that is No longer valid" sap:VirtualizedContainerService.HintSize="650,273" sap2010:WorkflowViewState.IdRef="Sequence_111">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -404,7 +405,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:FilterDataTable>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="För att få helt automatiska avslag behöver även de existerade giltiga ärenden som uppdateras till ogiltiga här också ändra status." DataTable="[dt_OnlyValidCases]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,112" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="För att få helt automatiska avslag behöver även de existerade giltiga ärenden som uppdateras till ogiltiga här också ändra status." DataTable="[dt_OnlyValidCases]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,97" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
@@ -529,7 +530,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEachRow>
                   </Sequence>
-                  <Sequence DisplayName="Updating Case that No Longer Has a 'Beliljad' Status" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                  <Sequence DisplayName="Updating Case that No Longer Has a 'Beliljad' Status" sap:VirtualizedContainerService.HintSize="650,201" sap2010:WorkflowViewState.IdRef="Sequence_92">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="CaseStatusIsNOTApproved" />
                     </Sequence.Variables>
@@ -661,13 +662,13 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <If.Then>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="476,236" sap2010:WorkflowViewState.IdRef="Sequence_96">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="476,235" sap2010:WorkflowViewState.IdRef="Sequence_96">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign DisplayName="Assign - Case is approved" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_45">
+                                                <Assign DisplayName="Assign - Case is approved" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_45">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:Boolean">[CaseStatusIsNOTApproved]</OutArgument>
                                                   </Assign.To>
@@ -765,7 +766,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEachRow>
                   </Sequence>
-                  <Sequence DisplayName="Updating Cases that is Now Valid" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_112">
+                  <Sequence DisplayName="Updating Cases that is Now Valid" sap:VirtualizedContainerService.HintSize="650,1034" sap2010:WorkflowViewState.IdRef="Sequence_112">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="dt_ToBeValidCases" />
                     </Sequence.Variables>
@@ -775,7 +776,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:FilterDataTable DataTable="[dt_MasterFile]" DisplayName="Filter Data Table - To be valid cases" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="FilterDataTable_7" OutputDataTable="[dt_ToBeValidCases]" SelectColumnsMode="Remove">
+                    <ui:FilterDataTable DataTable="[dt_MasterFile]" DisplayName="Filter Data Table - To be valid cases" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="588,25" sap2010:WorkflowViewState.IdRef="FilterDataTable_7" OutputDataTable="[dt_ToBeValidCases]" SelectColumnsMode="Remove">
                       <ui:FilterDataTable.Filters>
                         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -808,22 +809,22 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:FilterDataTable>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ToBeValidCases]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ToBeValidCases]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="588,858" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="495,185" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="554,741" sap2010:WorkflowViewState.IdRef="Sequence_76">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If sap2010:Annotation.AnnotationText="Om beslutsdatumet inte har börja gälla ännu men börjar att gälla frånochmed dagen processen kör. Tar bort ärendet från filen så det handläggs på nytt. &#xA;Genom att göra detta behandlas ärendet som det är nyss hittat och såledses går den genom all affärslogik." Condition="[CurrentRow(&quot;Ärende giltigt&quot;).ToString.Contains(&quot;Nej&quot;) AndAlso&#xA;Not String.IsNullOrWhiteSpace(CurrentRow(&quot;Beslutsdatum Från&quot;).ToString) AndAlso&#xA;CurrentRow(&quot;Beslutsdatum Från&quot;).ToString IsNot Nothing AndAlso&#xA;DateTime.Parse(CurrentRow(&quot;Beslutsdatum Från&quot;).ToString) &lt;= Today.Date.AddDays(-LimitOfHowSoonDecisionIsValid)]" DisplayName="If - Valid and has a value in column 'Beslutsdatum Från' and &gt;= Today" sap:VirtualizedContainerService.HintSize="453,97" sap2010:WorkflowViewState.IdRef="If_19">
+                            <If sap2010:Annotation.AnnotationText="Uppdaterar ärenden som nu är giltiga (inom tidsramen)" Condition="[CurrentRow(&quot;Ärende giltigt&quot;).ToString.Contains(&quot;Nej&quot;) AndAlso&#xD;&#xA;Not String.IsNullOrWhiteSpace(CurrentRow(&quot;Beslutsdatum Från&quot;).ToString) AndAlso&#xD;&#xA;CurrentRow(&quot;Beslutsdatum Från&quot;).ToString IsNot Nothing AndAlso&#xD;&#xA;DateTime.ParseExact(CurrentRow(&quot;Beslutsdatum Från&quot;).ToString,&quot;yyyy-MM-dd&quot;, System.Globalization.CultureInfo.GetCultureInfo(&quot;sv-SE&quot;)).AddDays(-LimitOfHowSoonDecisionIsValid) &lt;= Today.Date]" DisplayName="If - Valid and has a value in column 'Beslutsdatum Från' and &gt;= Today" sap:VirtualizedContainerService.HintSize="512,653" sap2010:WorkflowViewState.IdRef="If_19">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                 </scg:Dictionary>
@@ -877,13 +878,13 @@
                       </ui:ForEachRow.Body>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEachRow>
                   </Sequence>
-                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_MasterFile]" DisplayName="Write Range Workbook - Update masterfile" sap:VirtualizedContainerService.HintSize="450,116" sap2010:WorkflowViewState.IdRef="WriteRange_5" SheetName="Blad1" WorkbookPath="[MasterFile]" />
+                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_MasterFile]" DisplayName="Write Range Workbook - Update masterfile" sap:VirtualizedContainerService.HintSize="650,116" sap2010:WorkflowViewState.IdRef="WriteRange_5" SheetName="Blad1" WorkbookPath="[MasterFile]" />
                 </Sequence>
                 <FlowStep.Next>
                   <FlowStep x:Name="__ReferenceID3">
