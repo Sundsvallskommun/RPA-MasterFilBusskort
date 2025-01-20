@@ -1,5 +1,6 @@
 {
   "name": "Masterfil För Skolskjuts Elevresor",
+  "projectId": "23e645ee-b9c0-4dfa-8017-549057d95235",
   "description": "Masterfil för skolskjuts gällande elevresor. ",
   "main": "Main.xaml",
   "dependencies": {
@@ -96,7 +97,8 @@
         "fileName": "Tests\\TestCase Get case content from GUI and Translate from GUI Keys to Masterfile...xaml"
       }
     ],
-    "modernBehavior": true
+    "modernBehavior": true,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
